@@ -1,0 +1,51 @@
+.container {
+  display: flex;
+  gap: 1em;
+  height: 3rem;
+  align-items: center;
+}
+
+.container li {
+  display: flex;
+  list-style: none;
+
+  border-radius: 8px;
+  height: 2rem;
+}
+
+.numbers:hover,
+.arrows:hover {
+  background-color: var(--main-color-light);
+}
+
+.container a {
+  width: 2rem;
+  height: 2rem;
+  margin: auto;
+  text-align: center;
+  line-height: 2rem;
+  vertical-align: middle;
+}
+
+.numbers {
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+  line-height: 2rem;
+  vertical-align: middle;
+  background-color: var(--grey-color-4);
+}
+
+.arrows {
+  width: 5rem;
+  background-color: rgb(211, 211, 211);
+}
+
+.arrows a {
+  width: 5rem;
+}
+
+.active {
+  background-color: var(--main-color);
+  color: var(--grey-color-4);
+}

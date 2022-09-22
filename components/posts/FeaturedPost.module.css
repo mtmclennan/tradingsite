@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  margin-top: 1em;
+}
+
+.container button {
+  margin-top: 1em;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background-color: var(--main-color);
+  border: none;
+  color: rgb(255, 255, 255);
+  margin-bottom: 1em;
+}
+
+.container button:hover,
+.container button:focus {
+  background-color: #ffffff;
+  color: rgb(84, 84, 151);
+  border: solid 1px rgb(119, 119, 219);
+}
+
+.body {
+  max-width: 850px;
+  line-height: 1.5;
+  padding: 1em;
+}
+
+.title {
+  color: var(--grey-color-7);
+  font-size: 2.5rem;
+}

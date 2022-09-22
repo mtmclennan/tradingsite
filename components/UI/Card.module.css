@@ -1,0 +1,13 @@
+.card {
+  width: 100vw;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  box-shadow: 10px 10px 8px #888888;
+}
+
+@media (min-width: 590px) {
+  .card {
+    width: 36rem;
+    height: 36rem;
+  }
+}

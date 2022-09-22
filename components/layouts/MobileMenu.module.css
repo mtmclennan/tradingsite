@@ -1,0 +1,29 @@
+.menu {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+  /* transform: translateX(50%); */
+}
+
+.menuHidden {
+  height: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.link {
+  margin-top: 3rem;
+}
+
+.link a {
+  margin-left: 3em;
+  font-size: 2rem;
+  color: rgb(70, 70, 70);
+  font-weight: 600;
+  letter-spacing: 0.3rem;
+}
+
+.link:nth-child(4) {
+  margin-bottom: 3rem;
+}
