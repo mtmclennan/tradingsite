@@ -18,7 +18,6 @@ const Blog = ({ posts }) => {
     const dateB = new Date(b.dateModified);
     return dateB - dateA;
   });
-  console.log(sortedBlogPosts);
 
   const indexOfLastRecord = currentPage * recordsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
@@ -29,8 +28,6 @@ const Blog = ({ posts }) => {
     setAllPosts(sortedBlogPosts.slice(1));
   }, [sortedBlogPosts]);
 
-  console.log(featuredPost);
-  console.log(allPosts);
   useEffect(() => {
     if (allPosts) {
       setCurrentPosts(allPosts.slice(indexOfFirstRecord, indexOfLastRecord));
@@ -74,7 +71,7 @@ const Blog = ({ posts }) => {
                       </a>
                     </Link>
                     <p className="post-card__small">By {post.author}</p>
-                    <p>{post.description}</p>
+                    <p className="post-card__text">{post.description}</p>
                     <p className="post-card__small">
                       Last Modified: {formatDate(post.dateModified)}
                     </p>

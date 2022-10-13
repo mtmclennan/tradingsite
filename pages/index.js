@@ -8,7 +8,8 @@ const HomePage = () => {
       <section className="hero">
         <div className="hero-title">
           <p>Welcome To</p>
-          <Image src={logo} alt="BrandName" />
+          <h1>EdgeInMind</h1>
+          {/* <Image src={logo} alt="BrandName" /> */}
           <p>There Is Great Content Here For You</p>
         </div>
       </section>
