@@ -1,0 +1,138 @@
+.inputWrapper,
+.orderPrices {
+  width: 100%;
+
+  background-color: var(--grey-color-8);
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 1em 1em 2em 2em;
+  flex-direction: column;
+  height: 100%;
+}
+
+.orderPrices {
+  grid-row: 2 /4;
+  padding-top: 0.5rem;
+  padding-bottom: 0.75rem;
+}
+
+.dollar {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px 0 0 10px;
+  font-size: 1.4rem;
+  width: 35px;
+  background-color: var(--color-primary);
+  color: var(--grey-color-9);
+}
+
+.left {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px 0 0 10px;
+  font-size: 1.4rem;
+  width: 35px;
+  background-color: var(--grey-color-8);
+  border: 1px solid var(--color-secondary);
+  color: var(--color-primary);
+}
+
+.inputRight,
+.inputLeft,
+.input,
+.inputBoth {
+  padding-left: 1em;
+  height: 40px;
+  font-size: 1rem;
+  max-width: 120px;
+  color: var(--grey-color-7);
+  height: 100%;
+  transition: all 0.15s linear;
+}
+
+.inputBoth {
+  border-top: 2px solid var(--color-secondary);
+  border-right: 2px solid var(--color-secondary);
+  border-bottom: 2px solid var(--color-secondary);
+  border-left: 2px solid var(--color-secondary);
+}
+
+.input {
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+
+.inputRight::placeholder,
+.inputLeft::placeholder,
+.input::placeholder,
+.inputBoth::placeholder {
+  color: rgba(128, 128, 128, 0.411);
+}
+
+.inputLeft {
+  border-radius: 0 10px 10px 0;
+  border-top: 2px solid var(--color-secondary);
+  border-bottom: 2px solid var(--color-secondary);
+  border-right: 2px solid var(--color-secondary);
+  border-left: 2px solid var(--color-secondary);
+}
+
+.inputRight {
+  border-radius: 10px 0 0 10px;
+  border-top: 2px solid var(--color-secondary);
+  border-right: 2px solid var(--color-secondary);
+  border-bottom: 2px solid var(--color-secondary);
+  border-left: 2px solid var(--color-secondary);
+  max-width: 80px;
+}
+
+.right,
+.clip {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 10px 10px 0;
+  font-size: 1rem;
+  width: 35px;
+  border: 1px solid var(--color-secondary);
+}
+
+.right {
+  background-color: var(--grey-color-8);
+  color: var(--color-primary);
+}
+
+.clip {
+  background-color: var(--grey-color-8);
+}
+
+.flexContainer {
+  display: flex;
+  height: 40px;
+}
+
+.input:focus,
+.inputLeft:focus,
+.inputRight:focus,
+.inputBoth:focus {
+  border: 2px solid var(--main-color);
+  transition: all 0.15s linear;
+  background-color: #fff;
+}
+
+.error {
+  border: 2px solid #ca0101dc;
+  transition: all 0.15s linear;
+  background-color: #f8afaff5;
+}
+
+.childContainer {
+  display: flex;
+  margin-left: 2.5em;
+}

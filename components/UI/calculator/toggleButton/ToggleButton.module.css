@@ -1,0 +1,27 @@
+.btnLong,
+.btnShort {
+  padding: 0.75em;
+  border: none;
+  transition: all 0.15s linear;
+}
+
+.btnLong {
+  border-radius: 10px 0 0 10px;
+}
+
+.btnShort {
+  border-radius: 0 10px 10px 0;
+}
+
+.active {
+  background-color: var(--color-primary-dark);
+  color: var(--grey-color-1);
+  border: 2px solid var(--main-color);
+}
+
+.nonActive {
+  background-color: var(--grey-color-9);
+  border: 1px solid var(--color-secondary);
+
+  color: var(--grey-color-6);
+}

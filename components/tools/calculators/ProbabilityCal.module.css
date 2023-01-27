@@ -1,0 +1,128 @@
+.container,
+.outputContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1em;
+  border-radius: 10px;
+  background-color: var(--grey-color-9);
+  padding: 1em;
+  box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.24);
+  color: var(--grey-color-5);
+}
+
+.outputContainer {
+  max-width: 1200px;
+}
+
+.container {
+  margin: auto;
+}
+.grid {
+  display: grid;
+  gap: 1em;
+}
+
+.button,
+.reset {
+  padding: 0.75rem 0.75rem;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+  transition: all 0.1s linear;
+}
+.form {
+  display: grid;
+  gap: 1em;
+  grid-template-rows: 55px repeat(7, 110px) 44px;
+}
+
+.chart {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 80vh;
+  border-radius: 10px;
+  background-color: var(--grey-color-9);
+}
+
+.tooltip {
+  padding: 1em;
+  color: var(--grey-color-1);
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.24);
+}
+
+.outputWrapper {
+  margin-top: 2em;
+  display: grid;
+  gap: 1em;
+}
+
+@media (min-width: 800px) {
+  .container {
+    max-width: 50vw;
+  }
+
+  .chart {
+    margin: 1em;
+    padding: 2em;
+  }
+
+  .grid {
+    grid-template-columns: 400px 1fr;
+  }
+}
+
+@media (max-width: 799px) {
+  .container,
+  .outputContainer {
+    max-width: 400px;
+    margin: auto;
+  }
+
+  .grid {
+    grid-template-rows: 1fr;
+    margin: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+}
+
+.button {
+  background-color: var(--main-color);
+  color: var(--grey-color-9);
+}
+
+.reset {
+  background-color: #66fcf200;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.button:hover,
+.button:focus {
+  background-color: var(--color-primary-dark);
+  color: var(--grey-color-9);
+  transform: scale(1.05);
+  transition: all 0.1s linear;
+}
+
+.reset:hover,
+.reset:focus {
+  transform: scale(1.05);
+  transition: all 0.1s linear;
+  border-color: var(--color-primary-dark);
+  color: var(--color-primary-dark);
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+.title {
+  color: var(--color-primary);
+}

@@ -1,0 +1,65 @@
+.outputLeft,
+.outputRight,
+.output,
+.outputRound {
+  height: 40px;
+  background-color: var(--grey-color-7);
+  max-width: 150px;
+  padding-left: 1em;
+  color: var(--grey-color-1);
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  width: 100%;
+  border: 1px solid var(--color-secondary);
+}
+
+.outputLeft {
+  border-radius: 0 10px 10px 0;
+}
+
+.outputRight {
+  border-radius: 10px 0 0 10px;
+}
+
+.outputRound {
+  border-radius: 10px;
+}
+
+.left {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px 0 0 10px;
+  font-size: 1.4rem;
+  width: 35px;
+  background-color: var(--grey-color-8);
+  border: 1px solid var(--color-secondary);
+  color: var(--color-primary);
+}
+
+.clip {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 10px 10px 0;
+  font-size: 1rem;
+  width: 35px;
+  border: 1px solid var(--color-secondary);
+}
+
+.right {
+  background-color: var(--grey-color-8);
+  color: var(--color-primary);
+}
+
+.clip {
+  background-color: var(--grey-color-8);
+}
+
+.container {
+  display: flex;
+  height: 40px;
+}

@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: center;
   transition: all 0.5s ease-in-out;
+  background-color: #1f2833b2;
   /* transform: translateX(50%); */
 }
 
@@ -19,7 +20,7 @@
 .link a {
   margin-left: 3em;
   font-size: 2rem;
-  color: rgb(70, 70, 70);
+  color: var(--grey-color-1);
   font-weight: 600;
   letter-spacing: 0.3rem;
 }

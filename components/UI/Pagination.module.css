@@ -9,13 +9,13 @@
   display: flex;
   list-style: none;
 
-  border-radius: 8px;
+  /* border-radius: 8px; */
   height: 2rem;
 }
 
 .numbers:hover,
 .arrows:hover {
-  background-color: var(--main-color-light);
+  background-color: var(--color-primary-light);
 }
 
 .container a {
@@ -33,12 +33,12 @@
   text-align: center;
   line-height: 2rem;
   vertical-align: middle;
-  background-color: var(--grey-color-4);
+  background-color: var(--color-secondary);
 }
 
 .arrows {
   width: 5rem;
-  background-color: rgb(211, 211, 211);
+  background-color: var(--color-secondary);
 }
 
 .arrows a {
@@ -47,5 +47,5 @@
 
 .active {
   background-color: var(--main-color);
-  color: var(--grey-color-4);
+  color: var(--grey-color-7);
 }

@@ -5,9 +5,10 @@
   padding: 0 2%;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--grey-color-1);
+  background-color: rgba(0, 0, 0, 0);
   z-index: 10;
-  box-shadow: 10px 3px 10px 0px #888888;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.116);
+  /* box-shadow: 10px 3px 10px 0px #888888; */
 }
 
 .linksLarger {
@@ -18,7 +19,7 @@
   display: flex;
   height: 5rem;
   font-weight: 500;
-  color: var(--grey-color-9);
+  color: var(--grey-color-1);
 }
 
 .logo {
@@ -29,7 +30,7 @@
 }
 
 .header h1 {
-  color: rgb(119, 119, 219);
+  color: var(--main-color);
 }
 
 .header ul {
@@ -45,32 +46,33 @@
 
 .header a:hover {
   display: block;
-  color: var(--grey-color-5);
+  color: var(--grey-color-1);
   transform: scale(1.04);
   transition: all 0.2s ease;
 }
 
 .header a {
   letter-spacing: 0.15rem;
-  color: var(--grey-color-8);
+  color: var(--grey-color-4);
 }
 
 .header button {
   padding: 0.75rem 1rem;
   flex-grow: 0;
-  color: var(--grey-color-1);
+  color: var(--grey-color-7);
   background-color: var(--main-color);
-  border-color: var(--main-color);
+
   border-width: 1px;
   font-weight: 400;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   transition: all 0.2s ease;
 }
 
 .header button:hover {
-  color: var(--main-color);
-  background-color: rgb(255, 255, 255);
+  color: var(--color-primary-light);
+  background-color: var(--color-primary-dark);
   transform: scale(1.05);
+  border-color: var(--color-primary-dark);
 }
 
 .actionContainer {

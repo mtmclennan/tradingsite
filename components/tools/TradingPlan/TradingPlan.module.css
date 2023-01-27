@@ -1,0 +1,43 @@
+.button,
+.reset {
+  padding: 0.75rem 0.75rem;
+  border-radius: 10px;
+
+  border: none;
+
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+  transition: all 0.1s linear;
+}
+.button {
+  background-color: var(--main-color);
+  color: var(--grey-color-9);
+}
+
+.reset {
+  background-color: #66fcf200;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.button:hover,
+.button:focus {
+  background-color: var(--color-primary-dark);
+  color: var(--grey-color-9);
+  transform: scale(1.05);
+  transition: all 0.1s linear;
+}
+
+.reset:hover,
+.reset:focus {
+  transform: scale(1.05);
+  transition: all 0.1s linear;
+  border-color: var(--color-primary-dark);
+  color: var(--color-primary-dark);
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+}

@@ -1,5 +1,5 @@
 .footer {
-  background-color: var(--main-color);
+  background-color: #1f283363;
   width: 100%;
   padding: 0 10%;
   display: grid;
@@ -18,13 +18,13 @@
 
 .nav a {
   font-weight: 600;
-  color: rgb(255, 255, 255);
+  color: var(--grey-color-1);
   letter-spacing: 0.2rem;
 }
 
 .nav a:hover,
 .nav a:focus {
-  color: rgb(210, 183, 236);
+  color: var(--grey-color-6);
 }
 
 .copyright {
