@@ -2,9 +2,9 @@
 
 ## The Ultimate Resource for Traders Seeking an Edge in the Market
 
-This NextJS project is a basic blog website, that also had a tools section. The tools includes calculators for traders to uses for quickly figuring out order placement prices, number of share etc.
+This NextJS project is a basic blog website, that also has a tools section. The tools section includes calculators for traders to use for quickly figuring out order placement prices, number of share etc.
 
-The site uses NextJS SSG (Static Site Generation), and On-Demand Revalidation ISR (Incremental Static Regeneration). That rebuilds the static site whenever a post is published or removed from the backend database. Using [PluralPost](https://github.com/mtmclennan/PluralPost) for a backend, to retrieve post data at build time.
+The site uses NextJS SSG (Static Site Generation), and On-Demand Revalidation ISR (Incremental Static Regeneration). This rebuilds the static site whenever a post is published or removed from the backend database. This project is using [PluralPost](https://github.com/mtmclennan/PluralPost) for a backend, to retrieve post data at build time.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
