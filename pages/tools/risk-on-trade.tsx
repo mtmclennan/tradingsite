@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import Head from "next/head";
 import TabNav from "../../components/UI/calculator/TabNav";
 import RiskOnTradeCal from "../../components/tools/calculators/RiskOnTradeCal";
-import Hero from "../../components/UI/calculator/hero";
+import Hero from "../../components/UI/calculator/Hero";
 
 const RiskOnTrade = () => {
   return (

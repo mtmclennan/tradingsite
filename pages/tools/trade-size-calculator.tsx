@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import Head from "next/head";
 import TabNav from "../../components/UI/calculator/TabNav";
 import TradeSizeCal from "../../components/tools/calculators/TradeSizeCal";
-import Hero from "../../components/UI/calculator/hero";
+import Hero from "../../components/UI/calculator/Hero";
 
 const TradeSizeCalculator = () => {
   return (

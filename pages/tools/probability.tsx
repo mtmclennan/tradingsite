@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import Head from "next/head";
 import TabNav from "../../components/UI/calculator/TabNav";
-import Hero from "../../components/UI/calculator/hero";
+import Hero from "../../components/UI/calculator/Hero";
 import PropabilityCalContainer from "../../components/tools/calculators/PropablityCalContainer";
 
 const Probability = () => {
