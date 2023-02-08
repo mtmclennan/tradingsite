@@ -1,5 +1,5 @@
 import Help from "../Help";
-import classes from "./Inputfield.module.scss";
+import classes from "./InputField.module.scss";
 
 interface InputFieldProps {
   error?: boolean;
