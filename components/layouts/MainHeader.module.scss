@@ -1,14 +1,25 @@
+@use "../../styles/abstracts/mixins" as m;
+@use "../../styles/abstracts/variables" as v;
+
 .header {
   width: 100%;
-  position: relative;
   height: 5rem;
+  position: fixed;
+  top: 0;
   padding: 0 2%;
   align-items: center;
   justify-content: space-between;
-  background-color: rgba(0, 0, 0, 0);
-  z-index: 10;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.116);
-  /* box-shadow: 10px 3px 10px 0px #888888; */
+  background-color: v.$color-neutral-dark;
+  z-index: 100;
+  border-bottom: 1px solid rgba(189, 189, 189, 0.493);
+
+  @include m.mediaDesktop {
+    position: relative;
+  }
+}
+
+.headerClear {
+  background-color: rgba(0, 0, 0, 0.082);
 }
 
 .linksLarger {

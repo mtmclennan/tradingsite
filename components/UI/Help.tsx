@@ -3,10 +3,10 @@ import { Fragment, useState } from "react";
 import classes from "./Help.module.css";
 
 type HelpProps = {
-  delay: number;
-  color: string;
-  size: number;
-  direction: string;
+  delay?: number;
+  color?: string;
+  size?: number;
+  direction?: string;
   message: string;
   icon?: React.ReactNode;
 };

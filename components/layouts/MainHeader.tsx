@@ -1,8 +1,8 @@
 import Link from "next/link";
-import classes from "./MainHeader.module.css";
+import classes from "./MainHeader.module.scss";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import logo from "../../public/assets/BlogNameLogo.png";
+
 import { Fragment, useEffect, useState } from "react";
 import Hamburger from "./Hamburger";
 import MobileMenu from "./MobileMenu";
@@ -23,9 +23,31 @@ const MainHeader = () => {
     setShowMobileMenu(false);
   }, [currentRoute]);
 
+  useEffect(() => {
+    if (
+      currentRoute === "/" ||
+      currentRoute === "/about" ||
+      currentRoute === "/contact" ||
+      currentRoute === "/tools"
+    ) {
+      document.body.classList.add("body-background");
+    } else if (document.body.classList.contains("body-background")) {
+      document.body.classList.remove("body-background");
+    }
+  }, [currentRoute]);
+
   return (
     <Fragment>
-      <header className={classes.header}>
+      <header
+        className={
+          currentRoute === "/" ||
+          currentRoute === "/about" ||
+          currentRoute === "/contact" ||
+          currentRoute === "/tools"
+            ? `${classes.header} ${classes.headerClear}`
+            : classes.header
+        }
+      >
         <nav className={classes.nav}>
           <div className={classes.logo}>
             <Link href="/">
@@ -71,15 +93,15 @@ const MainHeader = () => {
           />
         </nav>
       </header>
-      {showMobileMenu && (
-        <MobileMenu
-          homeClassname={homeClassname}
-          blogClassname={blogClassname}
-          aboutClassname={aboutClassname}
-          contactClassname={contactClassname}
-          toolsClassname={toolsClassname}
-        />
-      )}
+
+      <MobileMenu
+        showMenu={showMobileMenu}
+        homeClassname={homeClassname}
+        blogClassname={blogClassname}
+        aboutClassname={aboutClassname}
+        contactClassname={contactClassname}
+        toolsClassname={toolsClassname}
+      />
     </Fragment>
   );
 };

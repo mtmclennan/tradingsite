@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { SetStateBoolean } from "../../types/index.types";
-import classes from "./Hamburger.module.css";
+import classes from "./Hamburger.module.scss";
 
 type HamburgerProps = {
   setShowMenu: SetStateBoolean;

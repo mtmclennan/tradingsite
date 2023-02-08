@@ -1,5 +1,5 @@
 import Link from "next/link";
-import classes from "./MobileMenu.module.css";
+import classes from "./MobileMenu.module.scss";
 import { useEffect, useState } from "react";
 
 type MobileMenuProps = {
@@ -8,22 +8,18 @@ type MobileMenuProps = {
   toolsClassname: string;
   aboutClassname: string;
   contactClassname: string;
+  showMenu: boolean;
 };
 
 const MobileMenu = ({
+  showMenu,
   homeClassname,
   blogClassname,
   toolsClassname,
   aboutClassname,
   contactClassname,
 }: MobileMenuProps) => {
-  const [menuClass, setMenuClass] = useState(classes.menuHidden);
-
-  console.log(menuClass);
-  useEffect(() => {
-    setMenuClass(classes.menu);
-  }, []);
-
+  const menuClass = showMenu ? classes.menu : classes.menuHidden;
   return (
     <div className={menuClass}>
       <ul>

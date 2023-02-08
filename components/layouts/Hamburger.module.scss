@@ -1,8 +1,10 @@
+@use "../../styles/abstracts/variables" as v;
+
 .ham {
-  width: 2.5rem;
-  margin: auto 1em auto;
-  right: 1em;
-  height: 2.5rem;
+  width: 4.5rem;
+  margin: auto 1rem auto;
+  right: 2rem;
+  height: 3.8rem;
   display: flex;
   flex-flow: column wrap;
   justify-content: space-between;
@@ -20,9 +22,9 @@
 .midBarOpen,
 .bottomBarOpen {
   height: 5px;
-  background-color: var(--color-primary);
-  border-radius: 5px;
-  width: 2.5rem;
+  background-color: v.$color-primary;
+  // border-radius: 5px;
+  width: 3.8rem;
   transform-origin: left;
   margin: 3px 0;
   transition: all 0.5s ease-in-out;

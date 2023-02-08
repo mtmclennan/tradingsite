@@ -23,7 +23,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 10px 0 0 10px;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   width: 35px;
   background-color: var(--color-primary);
   color: var(--grey-color-9);
@@ -35,7 +35,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 10px 0 0 10px;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   width: 35px;
   background-color: var(--grey-color-8);
   border: 1px solid var(--color-secondary);
@@ -46,12 +46,12 @@
 .inputLeft,
 .input,
 .inputBoth {
-  padding-left: 1em;
-  height: 40px;
-  font-size: 1rem;
+  padding-left: 1rem;
+  font-size: 1.6rem;
   max-width: 120px;
   color: var(--grey-color-7);
-  height: 100%;
+  // height: 100%;
+  height: 4rem;
   transition: all 0.15s linear;
 }
 
@@ -98,7 +98,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 0 10px 10px 0;
-  font-size: 1rem;
+  font-size: 1.6rem;
   width: 35px;
   border: 1px solid var(--color-secondary);
 }

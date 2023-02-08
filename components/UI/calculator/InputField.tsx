@@ -1,7 +1,23 @@
 import Help from "../Help";
-import classes from "./Inputfield.module.css";
+import classes from "./Inputfield.module.scss";
 
-const InputField = (props) => {
+interface InputFieldProps {
+  error?: boolean;
+  iconL?: React.ReactNode;
+  iconR?: React.ReactNode;
+  label: string;
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
+  onBlur: () => void;
+  value?: string | number;
+  max?: string | number;
+  step?: string | number;
+  placeholder: string;
+  message?: string;
+  type?: string;
+  children?: React.ReactNode;
+}
+
+const InputField = (props: InputFieldProps) => {
   const errorState = props.error || null;
 
   const inputClass =
@@ -17,7 +33,7 @@ const InputField = (props) => {
     <div className={classes.inputWrapper}>
       <div className={classes.flexContainer}>
         <label htmlFor={props.label}>{props.label}</label>
-        <Help message={props.message} />
+        {props.message && <Help message={props.message} />}
       </div>
       <div className={classes.flexContainer}>
         {props.iconL && <span className={classes.left}>{props.iconL}</span>}

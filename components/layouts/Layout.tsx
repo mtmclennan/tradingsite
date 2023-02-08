@@ -1,6 +1,6 @@
 import Footer from "./Footer";
 import { Fragment, ReactNode } from "react";
-import classes from "./Layout.module.css";
+import classes from "./Layout.module.scss";
 import MainHeader from "./MainHeader";
 
 type LayoutProps = {

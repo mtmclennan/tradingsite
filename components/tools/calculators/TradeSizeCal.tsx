@@ -68,6 +68,7 @@ const TradeSizeCal = () => {
 
   const {
     value: enteredTicker,
+    hasError: tickerHasError,
     valueChangeHandler: tickerChangeHandler,
     inputBlurHandler: tickerBlurHandler,
     reset: resetTicker,
@@ -134,6 +135,7 @@ const TradeSizeCal = () => {
         >
           <h3 className={classes.title}>Input Trade</h3>
           <InputField
+            error={tickerHasError}
             message='Symbol of traded equity ("Stock Ticker") Example "MSFT" is the symbol for Microsoft stock'
             label="Symbol"
             type="text"

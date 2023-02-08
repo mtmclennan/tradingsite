@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
-import classes from "./FeaturedPost.module.css";
+import classes from "./FeaturedPost.module.scss";
 import useRemark from "../../hooks/use-remark";
 import { Post } from "../../types/interfaces";
 
