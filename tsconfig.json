@@ -20,8 +20,9 @@
     "**/*.ts",
     "**/*.tsx",
     "components/tools/TradeSIzeCal.js",
-    "hooks/use-remark.js",
-    "pages/blog/index.js"
+    "hooks/use-remark.ts",
+    "pages/blog/index.js",
+    "components/UI/calculator/OutputField.tsx"
   ],
   "exclude": ["node_modules"]
 }

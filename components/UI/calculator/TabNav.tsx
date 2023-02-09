@@ -3,8 +3,16 @@ import { useRouter } from "next/router";
 
 import classes from "./TabNav.module.css";
 
-const TabNav = (props) => {
-  const Tab = ({ link, label }) => {
+interface TabProps {
+  label: string;
+  link: string;
+}
+interface TabNavProps {
+  tabs: TabProps[];
+}
+
+const TabNav = ({ tabs }: TabNavProps) => {
+  const Tab = ({ link, label }: TabProps) => {
     const router = useRouter();
 
     const currentRoute = router.pathname;
@@ -21,8 +29,8 @@ const TabNav = (props) => {
 
   return (
     <div className={classes.container}>
-      {props.tabs &&
-        props.tabs.map((tab) => (
+      {tabs &&
+        tabs.map((tab) => (
           <Tab key={tab.label} link={tab.link} label={tab.label} />
         ))}
     </div>

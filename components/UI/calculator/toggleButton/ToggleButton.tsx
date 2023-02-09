@@ -1,13 +1,22 @@
 import { Fragment, useEffect, useState } from "react";
+import { SetStateBoolean } from "../../../../types/index.types";
 import classes from "./ToggleButton.module.css";
 
-const ToggleButton = (props) => {
+interface ToggleButtonProps {
+  toggleDirection: boolean;
+  setToggleDirection: SetStateBoolean;
+}
+
+const ToggleButton = ({
+  toggleDirection,
+  setToggleDirection,
+}: ToggleButtonProps) => {
   const longBtnHandler = () => {
-    props.setToggleDirection(true);
+    setToggleDirection(true);
   };
 
   const shortBtnHandler = () => {
-    props.setToggleDirection(false);
+    setToggleDirection(false);
   };
 
   return (
@@ -16,7 +25,7 @@ const ToggleButton = (props) => {
         type="button"
         onClick={longBtnHandler}
         className={`${classes.btnLong} ${
-          props.toggleDirection ? classes.active : classes.nonActive
+          toggleDirection ? classes.active : classes.nonActive
         }`}
       >
         Long
@@ -25,7 +34,7 @@ const ToggleButton = (props) => {
         type="button"
         onClick={shortBtnHandler}
         className={`${classes.btnShort} ${
-          props.toggleDirection ? classes.nonActive : classes.active
+          toggleDirection ? classes.nonActive : classes.active
         }`}
       >
         Short

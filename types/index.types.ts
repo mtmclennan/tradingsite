@@ -1,5 +1,5 @@
 import React from "react";
-import { Post } from "./interfaces";
+import { Html, Post } from "./interfaces";
 
 export type SetStateBoolean = React.Dispatch<React.SetStateAction<boolean>>;
 

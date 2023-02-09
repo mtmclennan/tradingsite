@@ -1,29 +1,31 @@
 import { Copy, CurrencyDollar } from "phosphor-react";
-import { Fragment, useState } from "react";
+import React, { Fragment, useState } from "react";
 import Help from "../Help";
 import classes from "./OutputField.module.css";
 
-const OutputField = (props) => {
+interface OutputFieldProps {
+  label: string;
+  output: number | string;
+  currency?: boolean;
+  copy?: boolean;
+}
+
+const OutputField = ({ label, output, currency, copy }: OutputFieldProps) => {
   const intialState = "Copy to ClipBoard";
   const [copyMessage, setCopyMessage] = useState(intialState);
   const iconColor = "#66fcf1";
 
-  const NoClipboard = (props) => {
-    const { label, output } = props;
+  const NoClipboard = ({ label, output }: OutputFieldProps) => {
     return (
       <div>
         <p>{label}</p>
         <div className={classes.container}>
-          {props.currency && (
+          {currency && (
             <span className={classes.left}>
               <CurrencyDollar size={20} color={iconColor} />
             </span>
           )}
-          <span
-            className={
-              props.currency ? classes.outputLeft : classes.outputRound
-            }
-          >
+          <span className={currency ? classes.outputLeft : classes.outputRound}>
             {output}
           </span>
         </div>
@@ -31,13 +33,13 @@ const OutputField = (props) => {
     );
   };
 
-  const Clipboard = (props) => {
-    const { label, output } = props;
-
-    const copyClipboardHandler = (e) => {
+  const Clipboard = ({ label, output, currency }: OutputFieldProps) => {
+    const copyClipboardHandler = (
+      event: React.MouseEvent<HTMLButtonElement>
+    ) => {
       if (navigator.clipboard && window.isSecureContext)
         navigator.clipboard
-          .writeText(e.currentTarget.value)
+          .writeText(event.currentTarget.value)
           .then(() => setCopyMessage("Copyed!"));
       setTimeout(() => {
         setCopyMessage(intialState);
@@ -48,14 +50,12 @@ const OutputField = (props) => {
       <div>
         <p>{label}</p>
         <div className={classes.container}>
-          {props.currency && (
+          {currency && (
             <span className={classes.left}>
               <CurrencyDollar size={20} color={iconColor} />
             </span>
           )}
-          <span
-            className={props.currency ? classes.output : classes.outputRight}
-          >
+          <span className={currency ? classes.output : classes.outputRight}>
             {output}
           </span>
           <button
@@ -72,23 +72,13 @@ const OutputField = (props) => {
 
   return (
     <Fragment>
-      {!props.copy && (
-        <NoClipboard
-          label={props.label}
-          output={props.output}
-          currency={props.currency}
-        />
+      {!copy && (
+        <NoClipboard label={label} output={output} currency={currency} />
       )}
-      {props.copy && (
+      {copy && (
         <Help
           message={copyMessage}
-          icon={
-            <Clipboard
-              label={props.label}
-              output={props.output}
-              currency={props.currency}
-            />
-          }
+          icon={<Clipboard label={label} output={output} currency={currency} />}
         />
       )}
     </Fragment>

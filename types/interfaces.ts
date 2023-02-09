@@ -15,3 +15,7 @@ export interface Post {
 export interface Res {
   status: string;
 }
+
+export interface Html {
+  __html: string;
+}

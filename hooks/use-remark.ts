@@ -6,9 +6,9 @@ import DOMPurify from "dompurify";
 import rehypeStringify from "rehype-stringify";
 
 const useRemark = () => {
-  const [postHtml, setPostHtml] = useState();
+  const [postHtml, setPostHtml] = useState<any>();
 
-  const convertMd = (data) => {
+  const convertMd = (data: string) => {
     unified()
       .use(remarkParse) // Parse markdown content to a syntax tree
       .use(remarkRehype) // Turn markdown syntax tree to HTML syntax tree, ignoring embedded HTML
