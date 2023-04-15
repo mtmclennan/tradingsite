@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 import useInput from "../../../hooks/use-input";
-import classes from "./TradeSizeCal.module.css";
+import classes from "./TradeSizeCal.module.scss";
 import OutputField from "../../UI/calculator/OutputField";
 import { X, CurrencyDollar } from "phosphor-react";
 import {
@@ -26,6 +26,8 @@ const TradeSizeCal = () => {
     tradeCost: 0,
     profit: 0,
   };
+
+  const iconColor = "#0173fd";
 
   const [Output, setOutput] = useState(initiaState);
   const [toggleDirection, setToggleDirection] = useState(true);
@@ -154,7 +156,7 @@ const TradeSizeCal = () => {
 
           <InputField
             label="Entry Price"
-            message="The price you want to enter the equity at"
+            message="The price value in which you want to enter the equity."
             type="number"
             placeholder="56.45"
             onChange={priceChangeHandler}
@@ -162,39 +164,39 @@ const TradeSizeCal = () => {
             value={enteredPrice}
             step="0.01"
             error={priceHasError}
-            iconL={<CurrencyDollar size={20} color="#66fcf1" />}
+            iconL={<CurrencyDollar size={20} color={iconColor} />}
           />
 
           <InputField
             label="Risk On Trade"
             message="The amount of money or (R)'s you will risk losing to find out if the trade works out.  Example 1% of a $10000 account = 100R"
             type="number"
-            placeholder="56.45"
+            placeholder="100"
             onChange={riskChangeHandler}
             onBlur={riskBlurHandler}
             value={enteredRisk}
             step="1"
             error={riskHasError}
-            iconL={<CurrencyDollar size={20} color="#66fcf1" />}
+            iconL={<CurrencyDollar size={20} color={iconColor} />}
             iconR="R"
           />
 
           <InputField
             label="Stop Distance"
             type="number"
-            message="The dollar amount differance between the entry price and the stop loss.  How much room will you get the trade to find out the outcome."
+            message="The dollar amount differance between the entry price and the stop loss.  How much room will you give the trade to find out the outcome."
             placeholder="0.15"
             onChange={slChangeHandler}
             onBlur={slBlurHandler}
             value={enteredSl}
             step="0.01"
             error={slHasError}
-            iconL={<CurrencyDollar size={20} color="#66fcf1" />}
+            iconL={<CurrencyDollar size={20} color={iconColor} />}
           />
 
           <InputField
             label="Risk Reward Ratio"
-            message="Multipler of profit over loss.  Example. If risk is $100, Risk Reward Ratio is 2x , potental return od the trade is $200 at the target price.   "
+            message="Multipler of profit over loss.  Example. with $100 risk, Risk Reward Ratio of 2x , the potental return of the trade is $200, if the trade can be exited at the target price.   "
             type="number"
             placeholder="2"
             onChange={riskRewardChangeHandler}
@@ -202,7 +204,7 @@ const TradeSizeCal = () => {
             value={enteredRiskReward}
             step="0.01"
             error={riskRewardHasError}
-            iconR={<X size={20} color="#66fcf1" />}
+            iconR={<X size={20} color={iconColor} />}
           />
         </form>
         <div className={classes.buttonContainer}>

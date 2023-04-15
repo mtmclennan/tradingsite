@@ -13,6 +13,16 @@ export const getBySlug = async (slug: string) => {
   const post = await res.json();
   return post;
 };
+
+export const formatDate = (date: string) => {
+  const options: Intl.DateTimeFormatOptions = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+  return new Date(date).toLocaleDateString("en-US", options);
+};
+
 // import fs from 'fs';
 // import path from 'path';
 

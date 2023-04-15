@@ -2,15 +2,17 @@ import Link from "next/link";
 import classes from "./MainHeader.module.scss";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import Logo from "../../public/assets/Color logo - no background.svg";
 
 import { Fragment, useEffect, useState } from "react";
 import Hamburger from "./Hamburger";
 import MobileMenu from "./MobileMenu";
+import SubscribeButton from "../UI/SubscribeButton";
 
-const MainHeader = () => {
+const MainHeader = ({ currentRoute }: { currentRoute: string }) => {
   const router = useRouter();
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-  const currentRoute = router.pathname;
+  // const currentRoute = router.pathname;
 
   const homeClassname = currentRoute === "/" ? "active" : "non-active";
   const blogClassname = currentRoute === "/blog" ? "active" : "non-active";
@@ -23,37 +25,14 @@ const MainHeader = () => {
     setShowMobileMenu(false);
   }, [currentRoute]);
 
-  useEffect(() => {
-    if (
-      currentRoute === "/" ||
-      currentRoute === "/about" ||
-      currentRoute === "/contact" ||
-      currentRoute === "/tools"
-    ) {
-      document.body.classList.add("body-background");
-    } else if (document.body.classList.contains("body-background")) {
-      document.body.classList.remove("body-background");
-    }
-  }, [currentRoute]);
-
   return (
     <Fragment>
-      <header
-        className={
-          currentRoute === "/" ||
-          currentRoute === "/about" ||
-          currentRoute === "/contact" ||
-          currentRoute === "/tools"
-            ? `${classes.header} ${classes.headerClear}`
-            : classes.header
-        }
-      >
+      <header className={`${classes.header}`}>
         <nav className={classes.nav}>
           <div className={classes.logo}>
             <Link href="/">
               <a>
-                <h1>EdgeInMind</h1>
-                {/* <Image height={40} width={214} src={logo} alt="BrandName" /> */}
+                <Image src={Logo} alt="EdgeInMind" layout="fill" />
               </a>
             </Link>
           </div>
@@ -85,7 +64,7 @@ const MainHeader = () => {
             </li>
           </ul>
           <div className={classes.actionContainer}>
-            <button>SUBSCRIBE</button>
+            <SubscribeButton />
           </div>
           <Hamburger
             showMenu={showMobileMenu}

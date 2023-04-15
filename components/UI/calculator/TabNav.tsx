@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-import classes from "./TabNav.module.css";
+import classes from "./TabNav.module.scss";
 
 interface TabProps {
   label: string;

@@ -1,5 +1,5 @@
 import { SetStateNumber } from "../../types/index.types";
-import classes from "./Pagination.module.css";
+import classes from "./Pagination.module.scss";
 
 type PaginationProps = {
   numberPages: number;

@@ -1,21 +1,16 @@
 import useInput from "../../hooks/use-input";
-import classes from "./ContactForm.module.css";
+import classes from "./ContactForm.module.scss";
 import useHttp from "../../hooks/use-http";
 import Modal from "../UI/Modal";
 import React, { Fragment, useState } from "react";
 import { Res } from "../../types/interfaces";
+import { emailValidate, stringValidate } from "../../lib/input-utils";
 
 const ContactForm = () => {
   const { sendRequest, error, isLoading } = useHttp();
   const [showModal, setShowModal] = useState(false);
 
-  const SERVER_URL = `http://localhost:3030/api/v1/email/yardOasis/contact`;
-  const emailValidate = (value: string) => {
-    const emailFormat = new RegExp("[a-z0-9]+@[a-z]+.[a-z]{2,3}");
-    return emailFormat.test(value);
-  };
-
-  const stringValidate = (value: string) => value.trim() !== "";
+  const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_CONTACT_URL;
 
   const {
     value: enteredFirstName,
@@ -62,8 +57,12 @@ const ContactForm = () => {
     if (!enteredEmailIsValid || !messageIsValid) {
       return;
     }
-    console.log(enteredEmail);
+    console.log(SERVER_URL);
+    if (!SERVER_URL) return;
 
+    if (error) {
+      setShowModal(true);
+    }
     const response = (res: Res) => {
       if (res.status === "success") {
         resetFirstName();
@@ -107,6 +106,7 @@ const ContactForm = () => {
           </div>
         </Modal>
       )}
+
       <form className={classes.contactForm} onSubmit={onSubmitHandler}>
         <div className={classes.nameContainer}>
           <div className={classes.inputWrapper}>

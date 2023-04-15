@@ -2,8 +2,8 @@ import classes from "./TextField.module.css";
 
 interface TextFieldProps {
   label: string;
-  error: boolean;
-  placeholder: string;
+  error?: boolean;
+  placeholder?: string;
   onChange: React.ChangeEventHandler<HTMLTextAreaElement>;
   onBlur: React.ChangeEventHandler<HTMLTextAreaElement>;
   value: string | number;

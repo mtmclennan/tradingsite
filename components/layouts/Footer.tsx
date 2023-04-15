@@ -1,7 +1,7 @@
-import classes from "./Footer.module.css";
+import classes from "./Footer.module.scss";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "../../public/assets/BlogNameLogoAbove.png";
+import logo from "../../public/assets/Color EM Large logo - no background.png";
 import { useRouter } from "next/router";
 
 const Footer = () => {
@@ -19,8 +19,7 @@ const Footer = () => {
   return (
     <footer className={classes.footer}>
       <div className={classes.logo}>
-        <h1>EdgeInMind</h1>
-        {/* <Image height={125} width={250} src={logo} alt="BrandName" /> */}
+        <Image src={logo} alt="EdgeInMind" layout="responsive" />
       </div>
       <div className={classes.nav}>
         <ul>

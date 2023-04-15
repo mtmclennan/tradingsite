@@ -1,8 +1,10 @@
+@use "../../../styles/abstracts/variables" as v;
+
 .inputWrapper,
 .orderPrices {
   width: 100%;
 
-  background-color: var(--grey-color-8);
+  background-color: v.$grey-color-8;
   display: flex;
   justify-content: center;
   border-radius: 10px;
@@ -25,8 +27,8 @@
   border-radius: 10px 0 0 10px;
   font-size: 1.6rem;
   width: 35px;
-  background-color: var(--color-primary);
-  color: var(--grey-color-9);
+  background-color: v.$color-primary;
+  color: v.$grey-color-9;
 }
 
 .left {
@@ -37,9 +39,9 @@
   border-radius: 10px 0 0 10px;
   font-size: 1.6rem;
   width: 35px;
-  background-color: var(--grey-color-8);
-  border: 1px solid var(--color-secondary);
-  color: var(--color-primary);
+  background-color: v.$grey-color-8;
+  border: 1px solid v.$color-secondary;
+  color: v.$color-primary;
 }
 
 .inputRight,
@@ -49,17 +51,17 @@
   padding-left: 1rem;
   font-size: 1.6rem;
   max-width: 120px;
-  color: var(--grey-color-7);
+  color: v.$grey-color-7;
   // height: 100%;
   height: 4rem;
   transition: all 0.15s linear;
 }
 
 .inputBoth {
-  border-top: 2px solid var(--color-secondary);
-  border-right: 2px solid var(--color-secondary);
-  border-bottom: 2px solid var(--color-secondary);
-  border-left: 2px solid var(--color-secondary);
+  border-top: 2px solid v.$color-secondary;
+  border-right: 2px solid v.$color-secondary;
+  border-bottom: 2px solid v.$color-secondary;
+  border-left: 2px solid v.$color-secondary;
 }
 
 .input {
@@ -76,18 +78,18 @@
 
 .inputLeft {
   border-radius: 0 10px 10px 0;
-  border-top: 2px solid var(--color-secondary);
-  border-bottom: 2px solid var(--color-secondary);
-  border-right: 2px solid var(--color-secondary);
-  border-left: 2px solid var(--color-secondary);
+  border-top: 2px solid v.$color-secondary;
+  border-bottom: 2px solid v.$color-secondary;
+  border-right: 2px solid v.$color-secondary;
+  border-left: 2px solid v.$color-secondary;
 }
 
 .inputRight {
   border-radius: 10px 0 0 10px;
-  border-top: 2px solid var(--color-secondary);
-  border-right: 2px solid var(--color-secondary);
-  border-bottom: 2px solid var(--color-secondary);
-  border-left: 2px solid var(--color-secondary);
+  border-top: 2px solid v.$color-secondary;
+  border-right: 2px solid v.$color-secondary;
+  border-bottom: 2px solid v.$color-secondary;
+  border-left: 2px solid v.$color-secondary;
   max-width: 80px;
 }
 
@@ -100,16 +102,16 @@
   border-radius: 0 10px 10px 0;
   font-size: 1.6rem;
   width: 35px;
-  border: 1px solid var(--color-secondary);
+  border: 1px solid v.$color-secondary;
 }
 
 .right {
-  background-color: var(--grey-color-8);
+  background-color: v.$grey-color-8;
   color: var(--color-primary);
 }
 
 .clip {
-  background-color: var(--grey-color-8);
+  background-color: v.$grey-color-8;
 }
 
 .flexContainer {
@@ -121,7 +123,7 @@
 .inputLeft:focus,
 .inputRight:focus,
 .inputBoth:focus {
-  border: 2px solid var(--main-color);
+  border: 2px solid v.$color-primary;
   transition: all 0.15s linear;
   background-color: #fff;
 }

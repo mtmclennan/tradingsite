@@ -1,4 +1,4 @@
-import classes from "./ProbabilityCal.module.css";
+import classes from "./ProbabilityCal.module.scss";
 import OutputField from "../../UI/calculator/OutputField";
 import {
   AreaChart,
@@ -9,6 +9,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import { Fragment } from "react";
 
 type CustomTooltipProps = {
   active: boolean;
@@ -57,20 +58,25 @@ const PropabilityCal = ({
   graphData,
 }: PropabilityCalProps) => {
   return (
-    <div className={classes.grid}>
-      <div className={classes.outputContainer}>
-        <h3 className={classes.title}>Trade Series Outcome</h3>
-        <div className={classes.outputWrapper}>
-          <OutputField label="Balance" output={balance} currency={true} />
-          <OutputField label="Winning Streak" output={winStreak} />
-          <OutputField label="Lossing Streak" output={loseStreak} />
-          <OutputField label="Max Drawdown" output={drawDown} currency={true} />
-
-          <OutputField
-            label="Commission Cost"
-            output={comissions}
-            currency={true}
-          />
+    <Fragment>
+      <div className={classes.grid}>
+        <div className={classes.outputContainer}>
+          <h3 className={classes.title}>Trade Series Outcome</h3>
+          <div className={classes.outputWrapper}>
+            <OutputField label="Balance" output={balance} currency={true} />
+            <OutputField label="Winning Streak" output={winStreak} />
+            <OutputField label="Lossing Streak" output={loseStreak} />
+            <OutputField
+              label="Max Drawdown"
+              output={drawDown}
+              currency={true}
+            />
+            <OutputField
+              label="Commission Cost"
+              output={comissions}
+              currency={true}
+            />
+          </div>
         </div>
       </div>
       <div className={classes.chart}>
@@ -98,13 +104,13 @@ const PropabilityCal = ({
             <Area
               type="basis"
               dataKey="Balance"
-              stroke="#66fcf1"
-              fill="#45a29e"
+              stroke="#0173fd"
+              fill="#338ffe"
             />
           </AreaChart>
         </ResponsiveContainer>
       </div>
-    </div>
+    </Fragment>
   );
 };
 export default PropabilityCal;

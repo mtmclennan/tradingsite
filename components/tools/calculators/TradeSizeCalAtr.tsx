@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 import useInput from "../../../hooks/use-input";
-import classes from "./TradeSizeCal.module.css";
+import classes from "./TradeSizeCal.module.scss";
 import {
   calProfit,
   calShares,
@@ -17,6 +17,8 @@ import ToggleButton from "../../UI/calculator/toggleButton/ToggleButton";
 import InputField from "../../UI/calculator/InputField";
 
 const TradeSizeCalAtr = () => {
+  const iconColor = "#0173fd";
+
   const initiaState = {
     ticker: "",
     entryPrice: 0,
@@ -175,7 +177,7 @@ const TradeSizeCalAtr = () => {
             value={enteredPrice}
             step="0.01"
             error={priceHasError}
-            iconL={<CurrencyDollar size={20} color="#66fcf1" />}
+            iconL={<CurrencyDollar size={20} color={iconColor} />}
           />
 
           <InputField
@@ -188,7 +190,7 @@ const TradeSizeCalAtr = () => {
             value={enteredRisk}
             step="1"
             error={riskHasError}
-            iconL={<CurrencyDollar size={20} color="#66fcf1" />}
+            iconL={<CurrencyDollar size={20} color={iconColor} />}
             iconR="R"
           />
 
@@ -214,7 +216,7 @@ const TradeSizeCalAtr = () => {
             onBlur={ATRMutiBlurHandler}
             value={enteredATRMuti}
             error={ATRMutiHasError}
-            iconR={<X size={20} color="#66fcf1" />}
+            iconR={<X size={20} color={iconColor} />}
           />
 
           <InputField
@@ -227,7 +229,7 @@ const TradeSizeCalAtr = () => {
             value={enteredRiskReward}
             step="0.01"
             error={riskRewardHasError}
-            iconR={<X size={20} color="#66fcf1" />}
+            iconR={<X size={20} color={iconColor} />}
           />
         </form>
         <div className={classes.buttonContainerAtr}>

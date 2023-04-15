@@ -23,11 +23,21 @@
 .bottomBarOpen {
   height: 5px;
   background-color: v.$color-primary;
-  // border-radius: 5px;
-  width: 3.8rem;
+  border-radius: 5px;
   transform-origin: left;
   margin: 3px 0;
   transition: all 0.5s ease-in-out;
+}
+.topBar,
+.bottomBar,
+.topBarOpen,
+.bottomBarOpen {
+  width: 3.8rem;
+}
+
+.midBar,
+.midBarOpen {
+  width: 3rem;
 }
 
 .topBarOpen {

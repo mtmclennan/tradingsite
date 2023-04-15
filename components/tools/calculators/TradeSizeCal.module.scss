@@ -1,18 +1,21 @@
+@use "../../../styles/abstracts/variables" as v;
+
 .container {
   display: flex;
   width: 100%;
+  margin-bottom: 2rem;
   flex-direction: column;
-  margin: 1em auto 1em auto;
+  margin: 0 auto 0 auto;
   border-radius: 10px;
-  background-color: var(--grey-color-9);
-  padding: 1em;
+  background-color: v.$grey-color-9;
+  padding: 3rem;
   box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.24);
-  color: var(--grey-color-5);
+  color: v.$grey-color-5;
 }
 
 .riskCalForm {
   display: grid;
-  gap: 1em;
+  gap: 1rem;
   width: 100%;
   /* grid-row: 1 / 3; */
   grid-template-rows: 55px repeat(5, 110px) 43px;
@@ -25,7 +28,7 @@
   margin: auto;
   grid-template-rows: 55px repeat(6, 110px) 43px;
   max-width: 345px;
-  gap: 1em;
+  gap: 1rem;
   height: 100%;
 }
 
@@ -41,7 +44,7 @@
   }
 
   .grid {
-    gap: 1em;
+    gap: 1rem;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 55px repeat(5, 110px) 43px;
   }
@@ -90,15 +93,15 @@
 
 .gridAtr {
   display: grid;
-  gap: 1em;
+  gap: 1rem;
 }
 
 .container h3 {
   margin-bottom: 2rem;
   letter-spacing: 1.5px;
-  margin-left: 1em;
+  margin-left: 1rem;
   font-weight: 500;
-  color: var(--color-primary);
+  color: v.$color-primary;
 }
 
 .buttonContainer {
@@ -129,7 +132,7 @@
 
 @media (min-width: 600px) {
   .container {
-    padding: 3em;
+    padding: 3rem;
   }
 }
 .inputWrapper,
@@ -138,7 +141,7 @@
 .tickerContainer,
 .costContainer {
   width: 100%;
-  background-color: var(--grey-color-8);
+  background-color: v.$grey-color-8;
   display: flex;
   justify-content: center;
   border-radius: 10px;
@@ -162,7 +165,7 @@
   margin: auto;
   width: 100%;
   grid-template-rows: 55px repeat(5, 110px) 43px;
-  gap: 1em;
+  gap: 1rem;
 }
 
 /* .outputWrapper1 {
@@ -182,15 +185,15 @@
 
 .output {
   height: 40px;
-  background-color: var(--grey-color-7);
+  background-color: v.$grey-color-7;
   max-width: 150px;
   padding-left: 1rem;
-  color: var(--grey-color-1);
+  color: v.$grey-color-1;
   display: flex;
   align-items: center;
   font-size: 1.6rem;
 
-  border: 1px solid var(--color-secondary);
+  border: 1px solid v.$color-secondary;
 }
 
 .costContainer .flexContainer .output {
@@ -217,8 +220,8 @@
   border-radius: 10px 0 0 10px;
   font-size: 1.6rem;
   width: 35px;
-  background-color: var(--color-primary);
-  color: var(--grey-color-9);
+  background-color: v.$color-primary;
+  color: v.$grey-color-9;
 }
 
 .left {
@@ -229,19 +232,19 @@
   border-radius: 10px 0 0 10px;
   font-size: 1.4rem;
   width: 35px;
-  background-color: var(--grey-color-8);
-  border: 1px solid var(--color-secondary);
-  color: var(--color-primary);
+  background-color: v.$grey-color-8;
+  border: 1px solid v.$color-secondary;
+  color: v.$color-primary;
 }
 
 .inputRight,
 .inputLeft,
 .input {
-  padding-left: 1em;
+  padding-left: 1rem;
   height: 40px;
   font-size: 1rem;
   max-width: 120px;
-  color: var(--grey-color-7);
+  color: v.$grey-color-7;
   height: 100%;
   transition: all 0.15s linear;
 }
@@ -267,10 +270,10 @@
 
 .inputRight {
   border-radius: 10px 0 0 10px;
-  border-top: 2px solid var(--color-secondary);
-  border-right: 2px solid var(--color-secondary);
-  border-bottom: 2px solid var(--color-secondary);
-  border-left: 2px solid var(--color-secondary);
+  border-top: 2px solid v.$color-secondary;
+  border-right: 2px solid v.$color-secondary;
+  border-bottom: 2px solid v.$color-secondary;
+  border-left: 2px solid v.$color-secondary;
   max-width: 80px;
 }
 
@@ -283,16 +286,16 @@
   border-radius: 0 10px 10px 0;
   font-size: 1rem;
   width: 35px;
-  border: 1px solid var(--color-secondary);
+  border: 1px solid v.$color-secondary;
 }
 
 .right {
-  background-color: var(--grey-color-8);
-  color: var(--color-primary);
+  background-color: v.$grey-color-8;
+  color: v.$color-primary;
 }
 
 .clip {
-  background-color: var(--grey-color-8);
+  background-color: v.$grey-color-8;
 }
 
 .flexContainer {
@@ -317,13 +320,13 @@
 
   margin-top: 0.5rem;
   margin-bottom: -0.5rem;
-  color: var(--grey-color-1);
+  color: v.$grey-color-1;
 }
 
 .input:focus,
 .inputLeft:focus,
 .inputRight:focus {
-  border: 2px solid var(--main-color);
+  border: 2px solid v.$color-primary;
   transition: all 0.15s linear;
   background-color: #fff;
 }
@@ -347,28 +350,26 @@
 .reset {
   padding: 0.75rem 0.75rem;
   border-radius: 10px;
-
   border: none;
-
   font-size: 1.6rem;
   letter-spacing: 1.5px;
   transition: all 0.1s linear;
 }
 .button {
-  background-color: var(--main-color);
-  color: var(--grey-color-9);
+  background-color: v.$color-primary;
+  color: v.$grey-color-9;
 }
 
 .reset {
   background-color: #66fcf200;
-  border: 2px solid var(--color-primary);
-  color: var(--color-primary);
+  border: 2px solid v.$color-primary;
+  color: v.$color-primary;
 }
 
 .button:hover,
 .button:focus {
-  background-color: var(--color-primary-dark);
-  color: var(--grey-color-9);
+  background-color: v.$color-primary-dark;
+  color: v.$grey-color-9;
   transform: scale(1.05);
   transition: all 0.1s linear;
 }
@@ -377,6 +378,6 @@
 .reset:focus {
   transform: scale(1.05);
   transition: all 0.1s linear;
-  border-color: var(--color-primary-dark);
-  color: var(--color-primary-dark);
+  border-color: v.$color-primary-dark;
+  color: v.$color-primary-dark;
 }

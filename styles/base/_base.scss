@@ -3,7 +3,7 @@
 
 :root {
   /* --main-color: #fca311; */
-  --color-primary: #66fcf1;
+  --color-primary: v.$color-primary;
   --color-primary-dark: #45a29e;
   --color-primary-light: #c2fef9;
 
@@ -12,7 +12,7 @@
   --color-neutral: #1f2833;
   --color-neutral-dark: #0b0c10;
 
-  --main-color: #66fcf1;
+  --main-color: v.$color-primary;
   --main-color-med: #222629;
   --main-color-light: #b197fc;
   --grey-color-0: #f8f9fa;
@@ -47,16 +47,21 @@ body {
   font-size: 1.6rem;
   font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  color: var(--grey-color-1);
+  color: v.$text-color-light;
   overflow-x: hidden;
   box-sizing: border-box;
 }
+.background {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -100;
+}
 
-.body-background {
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
-    url(/assets/iStock-1322645661.jpg);
-  background-size: cover;
-  background-attachment: fixed;
+.background-image {
+  object-fit: cover;
+  z-index: -100;
 }
 
 input:focus,
@@ -87,31 +92,60 @@ button {
   margin: auto;
 }
 
+.hero__container {
+  @include m.flexCenter();
+}
+
 .hero {
   height: 70vh;
-
-  display: grid;
+  width: 100%;
+  @include m.flexCenter();
+  justify-content: space-evenly;
 }
 
 .hero-title {
+  display: flex;
+  flex-direction: column;
   margin-top: 8rem;
-  grid-column: 2 / 5;
-  padding: 1rem;
+  justify-content: center;
+  padding: 1rem 1rem 1rem 8rem;
+  width: 50%;
+  max-width: 70rem;
+  & h3 {
+    font-size: 3rem;
+    letter-spacing: 0.1rem;
+    margin-bottom: 1rem;
+  }
 }
 
-.hero-title h1 {
-  color: var(--color-primary);
+.hero-title h2 {
+  font-size: 5.3rem;
+  line-height: 1.4;
+}
+
+.hero-logo {
+  @include m.flexCenter();
+  width: 50%;
+  height: 100%;
+}
+
+.hero-logo__image-container {
+  width: 100%;
+  @include m.flexCenter();
+  height: 100%;
+
+  position: relative;
+  max-width: 30vw;
+  // height: fit-content;
 }
 
 @media (min-width: 800px) {
   .hero {
-    grid-template-columns: repeat(6, 1fr);
   }
 }
 
 @media (min-width: 1200px) {
   .hero-title {
-    grid-column: 2 / 4;
   }
 }
 
@@ -124,6 +158,32 @@ button {
   line-height: 1.5;
 }
 
+.hero__button-container {
+  @include m.flexCenter();
+  gap: 2rem;
+  margin-top: 3rem;
+
+  & button {
+    padding: 0.75rem 4rem;
+    background-color: v.$color-primary;
+    border-radius: 5px;
+    border: 2px solid v.$color-primary;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    color: v.$text-color-light;
+    transition: all 0.2s ease;
+
+    &:hover,
+    &:focus {
+      color: v.$color-primary;
+      background-color: v.$text-color-light;
+      transform: scale(1.04);
+      transition: all 0.2s ease;
+    }
+  }
+}
+
 .logo-image {
   height: 100%;
 }
@@ -133,35 +193,37 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: v.$grey-color-9;
+  background-color: v.$color-neutral-dark;
+  padding: 2rem 0;
 }
 
 .title {
   margin: 1rem 0 1rem 0;
   text-align: center;
-  color: var(--grey-color-1);
+  color: v.$grey-color-1;
+}
+
+.post-card__image {
+  border-radius: 5px 5px 0 0;
 }
 
 .post-card__title {
-  color: var(--grey-color-7);
+  color: v.$grey-color-8;
 }
 
 .post-card__text {
-  color: var(--grey-color-7);
+  color: v.$grey-color-8;
 }
 .post-card__small {
-  font-size: 0.85rem;
-  color: var(--grey-color-7);
+  font-size: 1.1rem;
+  color: v.$grey-color-8;
+  margin: 0.5rem 0 0.5rem;
 }
 
 .post-card__lower {
   margin: 1rem;
   overflow: hidden;
 }
-/* 
-.post-card__image {
-  border-radius: 8px 8px 0 0;
-} */
 
 .post__container {
   display: flex;
@@ -169,7 +231,7 @@ button {
   justify-content: center;
   align-items: center;
   margin: auto;
-  background-color: v.$grey-color-9;
+  background-color: v.$grey-color-1;
   @include m.mediaDesktop {
   }
 }
@@ -193,9 +255,9 @@ button {
   justify-content: flex-start;
   text-align: center;
   align-items: center;
-  height: 50vh;
+  height: 52vh;
   width: 100%;
-  background-color: v.$color-neutral-dark;
+  background-color: v.$transparent;
   & h1 {
     @include m.mediaDesktop {
       font-size: 5rem;
@@ -213,16 +275,16 @@ button {
 
   display: flex;
   gap: 5rem;
-  font-size: 0.8rem;
+  font-size: 1.4rem;
 }
 
 .post__image-container {
-  margin-top: -13rem;
+  margin-top: -33rem;
   max-width: 1000px;
 }
 
 .post__body {
-  color: v.$text-color-light;
+  color: v.$text-color-dark;
   margin: 3rem 0 3rem;
   padding: 0 1rem;
   @include m.mediaDesktop {
@@ -257,16 +319,16 @@ button {
 .list button {
   margin-top: 1em;
   padding: 0.5rem 1rem;
-  /* border-radius: 8px; */
-  background: var(--color-primary);
+  border-radius: 5px;
+  background: v.$color-primary;
   border: none;
-  color: var(--color-neutral);
+  color: v.$text-color-light;
 }
 
 .list button:hover,
 .list button:focus {
-  background-color: var(--color-primary-dark);
-  color: var(--color-primary-light);
+  background-color: v.$color-primary-dark;
+  color: v.$text-color-dark;
   /* border: solid 1px var(--color-primary); */
 }
 
@@ -278,7 +340,7 @@ button {
   /* border: 1px solid #be3939; */
   position: absolute;
   height: 4px;
-  background: var(--color-primary);
+  background: v.$color-primary;
   bottom: -4px;
   border-radius: 6px;
   width: 100%;
@@ -308,7 +370,7 @@ button {
   font-size: 2rem;
   text-align: center;
   margin-bottom: 1rem;
-  color: var(--color-primary);
+  color: v.$color-primary;
 }
 
 @media (min-width: 800px) {
@@ -326,14 +388,15 @@ button {
   text-align: center;
   margin-bottom: 1rem;
 
-  color: var(--grey-color-1);
+  color: v.$grey-color-1;
 }
 
 .contact-form__container {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--grey-color-1);
+  background-color: v.$color-neutral-dark;
+  padding: 3rem 0;
   min-height: 70vh;
 }
 
@@ -351,10 +414,10 @@ button {
   flex-direction: column;
   margin: 1rem auto 1rem auto;
   border-radius: 10px;
-  background-color: var(--grey-color-9);
+  background-color: v.$grey-color-9;
   padding: 1rem;
   box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.24);
-  color: var(--grey-color-5);
+  color: v.$grey-color-5;
 }
 
 @media (min-width: 800px) {
@@ -366,4 +429,13 @@ button {
 .trading-plan__grid {
   display: grid;
   gap: 1rem;
+}
+
+.tool-card__container {
+  @include m.flexCenter();
+  gap: 2rem;
+  flex-wrap: wrap;
+  width: 100%;
+  background-color: v.$color-primary-dark;
+  padding: 15rem 3rem;
 }

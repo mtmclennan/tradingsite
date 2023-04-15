@@ -11,7 +11,7 @@ interface InputFieldProps {
   value?: string | number;
   max?: string | number;
   step?: string | number;
-  placeholder: string;
+  placeholder?: string;
   message?: string;
   type?: string;
   children?: React.ReactNode;

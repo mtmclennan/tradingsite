@@ -13,7 +13,7 @@ interface OutputFieldProps {
 const OutputField = ({ label, output, currency, copy }: OutputFieldProps) => {
   const intialState = "Copy to ClipBoard";
   const [copyMessage, setCopyMessage] = useState(intialState);
-  const iconColor = "#66fcf1";
+  const iconColor = "#0173fd";
 
   const NoClipboard = ({ label, output }: OutputFieldProps) => {
     return (

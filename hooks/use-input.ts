@@ -1,4 +1,3 @@
-import { type } from "os";
 import React, { useReducer } from "react";
 
 type State = {
@@ -22,7 +21,7 @@ const inputStateReducer = (state: State, action: Action) => {
     return { value: action.value, isTouched: state.isTouched };
   }
   if (action.type === "BLUR") {
-    return { value: state.value, isTouched: false };
+    return { value: state.value, isTouched: true };
   }
   if (action.type === "RESET") {
     return { value: "", isTouched: false };

@@ -1,54 +1,27 @@
 import ReactDOM from "react-dom";
-import { Fragment, useEffect, useRef, useState } from "react";
-import classes from "./Modal.module.css";
+import React, { Children, Fragment, useEffect, useRef, useState } from "react";
+import classes from "./Modal.module.scss";
 
 const Backdrop = ({ onClose }: { onClose: () => void }) => {
-  return <div className={classes.backdrop} onClick={onClose} />;
-};
-
-type ModalOverlayProps = {
-  className: string;
-  children: React.ReactNode;
-};
-const ModalOverlay = ({ className, children }: ModalOverlayProps) => {
   return (
-    <div className={className || classes.modal}>
-      <div className={classes.content}>{children}</div>
+    <div onClick={onClose} className={classes.backdrop}>
+      <div className={classes.closeTop}></div>
+      <div className={classes.closeBottom}></div>
     </div>
   );
 };
 
-type ModelProps = {
-  onClose: () => void;
+const Modal = ({
+  children,
+  onClose,
+}: {
   children: React.ReactNode;
-};
-
-const Modal = ({ onClose, children }: ModelProps) => {
-  const [isBrowser, setIsBrowser] = useState(false);
-  const portalElement = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    setIsBrowser(true);
-  }, []);
-
-  if (isBrowser) {
-    portalElement.current = document.getElementById(
-      "overlays"
-    )! as HTMLDivElement;
-  }
-
+  onClose: () => void;
+}) => {
   return (
     <Fragment>
-      {portalElement.current &&
-        ReactDOM.createPortal(
-          <Backdrop onClose={onClose} />,
-          portalElement.current
-        )}
-      {portalElement.current &&
-        ReactDOM.createPortal(
-          <ModalOverlay className={classes.className}>{children}</ModalOverlay>,
-          portalElement.current
-        )}
+      <Backdrop onClose={onClose}></Backdrop>
+      <div className={classes.modal}>{children}</div>
     </Fragment>
   );
 };

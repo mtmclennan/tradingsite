@@ -22,7 +22,8 @@
     "components/tools/TradeSIzeCal.js",
     "hooks/use-remark.ts",
     "pages/blog/index.js",
-    "components/UI/calculator/OutputField.tsx"
+    "components/UI/calculator/OutputField.tsx",
+    "declaration.d.ts"
   ],
   "exclude": ["node_modules"]
 }

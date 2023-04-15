@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
 import { SetStateBoolean } from "../../../../types/index.types";
-import classes from "./ToggleButton.module.css";
+import classes from "./ToggleButton.module.scss";
 
 interface ToggleButtonProps {
   toggleDirection: boolean;

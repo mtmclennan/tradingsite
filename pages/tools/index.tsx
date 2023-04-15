@@ -2,30 +2,41 @@ import { Fragment } from "react";
 import Head from "next/head";
 import Hero from "../../components/UI/calculator/Hero";
 import TabNav from "../../components/UI/calculator/TabNav";
-// import Graphic from "../../components/tools/other/Graphic";
-// import ChartComponent from "../../components/tools/other/charts";
+import ToolCard from "../../components/UI/calculator/ToolCard";
 
 const Tools = () => {
   return (
     <Fragment>
       <Head>
-        <title>Tools</title>
+        <title>Trading Tools/Calculators</title>
         <meta name="description" content="Tools home" />
       </Head>
-      <Hero title="Calculators" />
-      <TabNav
-        tabs={[
-          { label: "Trade Size", link: "/tools/trade-size-calculator" },
-          { label: "Trade Size ATR", link: "/tools/trade-size-calculator-atr" },
-          { label: "Risk On Trade", link: "/tools/risk-on-trade" },
-          { label: "Probability", link: "/tools/probability" },
-          {
-            label: "Trading Plan Creator",
-            link: "/tools/trading-plan-creator",
-          },
-        ]}
+      <Hero
+        title="Calculators & Trading Tools"
+        description="EdgeInMind is the ultimate destination for traders and investors looking to gain an edge in the market. We offer a wealth of information on technical analysis and trading psychology, as well as a range of advanced tools and resources to help you make better decisions and improve your performance. Our blog is regularly updated with expert insights and analysis, providing you with the latest market trends and strategies to help you stay ahead of the curve. From beginners to seasoned pros, EdgeInMind has something for everyone looking to take their trading to the next level. With our cutting-edge tools and expert analysis, you can unlock the full potential of your trading and achieve greater success in the market. Sign up now and take your trading to the next level with EdgeInMind!"
       />
-      {/* <ChartComponent /> */}
+      <div className="tool-card__container">
+        <ToolCard
+          title="Trade Order Calculator"
+          link="/tools/trade-size-calculator"
+          description="Calculate order entry and exit prices, number of shares and more.  Uses fixed dollar amount for stop loss placement"
+        />
+        <ToolCard
+          title="Trade Order Calculator ATR"
+          link="/tools/trade-size-calculator-atr"
+          description="Calculate order entry and exit prices, and number of shares.  Uses ATR (average true range) indicator for stop loss placement"
+        />
+        <ToolCard
+          title="Risk On Trade Calculator"
+          link="/tools/risk-on-trade"
+          description="Calculates the maximum money amount you should put at risk on one trade"
+        />
+        <ToolCard
+          title="Equity Curve Simulator"
+          link="/tools/probability"
+          description="Simulates winning and lossing steaks, plus equity curve and more"
+        />
+      </div>
     </Fragment>
   );
 };

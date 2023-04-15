@@ -1,0 +1,15 @@
+@use "../../styles/abstracts/mixins" as m;
+@use "../../styles/abstracts/variables" as v;
+
+.card {
+  list-style: none;
+  width: 55rem;
+  height: 52rem;
+  border-radius: 5px;
+
+  background-color: v.$grey-color-0;
+  @include m.mediaPhone {
+    width: 100vw;
+    height: fit-content;
+  }
+}

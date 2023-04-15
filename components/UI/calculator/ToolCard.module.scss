@@ -1,0 +1,57 @@
+@use "../../../styles/abstracts/variables" as v;
+@use "../../../styles/abstracts/mixins" as m;
+
+.card {
+  cursor: pointer;
+  @include m.flexCenter(column);
+  color: v.$text-color-dark;
+  width: 30rem;
+  height: 30rem;
+  background-color: v.$darker-blue;
+  box-shadow: v.$box-shadow-dark;
+  border-radius: 5px;
+  padding: 2rem;
+  border: 1px solid v.$color-primary;
+  &:hover {
+    transform: scale(1.02);
+    transition: all 0.1s linear;
+    background-color: v.$grey-color-8;
+  }
+}
+
+.body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: v.$text-color-light;
+  //   @include m.flexCenter(column);
+  //   justify-content: space-evenly;
+  gap: 1rem;
+  & button {
+    padding: 0.75rem 1.75rem;
+    border-radius: 5px;
+    border: none;
+    background-color: v.$color-primary;
+    color: v.$text-color-dark;
+    font-size: 1.6rem;
+    letter-spacing: 1.5px;
+    align-self: center;
+    margin-top: auto;
+  }
+  & button:hover {
+    background-color: v.$color-primary-dark;
+    color: v.$grey-color-0;
+    transform: scale(1.05);
+    transition: all 0.1s linear;
+  }
+
+  & h1 {
+    font-size: 2.5rem;
+    color: v.$color-primary;
+    align-self: center;
+  }
+  & h3 {
+    color: v.$color-primary;
+    align-self: center;
+  }
+}

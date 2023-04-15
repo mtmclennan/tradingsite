@@ -1,0 +1,26 @@
+@use "../../../styles/abstracts/mixins" as m;
+@use "../../../styles/abstracts/variables" as v;
+
+.container {
+  display: flex;
+  height: 20vh;
+  justify-content: center;
+  margin-bottom: 3em;
+}
+
+.hero {
+  display: flex;
+  color: v.$color-primary;
+  height: 100%;
+  width: 50%;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  border-bottom: 1px solid v.$color-secondary;
+  & h3 {
+    font-size: 2.5rem;
+  }
+  & h1 {
+    font-size: 5rem;
+  }
+}

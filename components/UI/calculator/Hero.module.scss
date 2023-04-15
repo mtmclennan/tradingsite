@@ -1,0 +1,38 @@
+@use "../../../styles/abstracts/mixins" as m;
+@use "../../../styles/abstracts/variables" as v;
+
+.container {
+  @include m.flexCenter(column);
+  // padding: 0 3rem;
+  height: 50vh;
+  width: 100%;
+}
+
+.hero,
+.description {
+  height: 100%;
+}
+
+.hero {
+  @include m.flexCenter(column);
+  color: v.$color-primary;
+  & h1 {
+    font-size: 5rem;
+    margin: 0.5rem 0 2rem;
+    text-align: center;
+  }
+  width: 40%;
+}
+
+.description {
+  @include m.flexCenter(column);
+  background-color: v.$darker-blue;
+  box-shadow: v.$box-shadow-dark;
+  padding: 3rem;
+  margin-bottom: -8rem;
+  max-width: 90rem;
+  & p {
+    height: fit-content;
+    // padding-bottom: 5rem;
+  }
+}

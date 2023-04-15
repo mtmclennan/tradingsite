@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
-import classes from "./ProbabilityCal.module.css";
+import classes from "./ProbabilityCal.module.scss";
 import InputField from "../../UI/calculator/InputField";
 import PropabilityCal from "./PropabiltyCal";
 import useInput from "../../../hooks/use-input";
@@ -18,9 +18,10 @@ const PropabilityCalContainer = ({ onClick }: PropabilityCalContainerProps) => {
   const [winningStreak, setWinningStreak] = useState(0);
   const [losingStreak, setLosingStreak] = useState(0);
   const [showOutput, setShowOutput] = useState(false);
-  const [account, setAccount] = useState(0);
   const [drawDown, setDrawDown] = useState(0);
   const [trades, setTrades] = useState<any[]>([]);
+
+  const iconColor = "#0173fd";
 
   const stringValiate = (value: string) => value !== "";
 
@@ -121,21 +122,19 @@ const PropabilityCalContainer = ({ onClick }: PropabilityCalContainerProps) => {
     return losses + +comissions1;
   };
 
-  useEffect(() => {
-    const profit = wins * +enteredRisk * +enteredRiskReward;
-    const lossess = losses * +enteredRisk;
-    const total = +profit - +lossess - +comissions;
-
-    setAccount(total + +enteredAccountBalance);
-  }, [
-    comissions,
-    wins,
-    losses,
-    enteredRisk,
-    enteredRiskReward,
-    enteredAccountBalance,
-    tradeGraph,
-  ]);
+  // useEffect(() => {
+  //   const profit = wins * +enteredRisk * +enteredRiskReward;
+  //   const lossess = losses * +enteredRisk;
+  //   const total = +profit - +lossess - +comissions;
+  // }, [
+  //   comissions,
+  //   wins,
+  //   losses,
+  //   enteredRisk,
+  //   enteredRiskReward,
+  //   enteredAccountBalance,
+  //   tradeGraph,
+  // ]);
 
   useEffect(() => {
     let countLosses = 0;
@@ -204,9 +203,9 @@ const PropabilityCalContainer = ({ onClick }: PropabilityCalContainerProps) => {
   };
   const formSubmitHandler = (event: React.FormEvent) => {
     event.preventDefault();
-    setLosses(0);
+    // setLosses(0);
     setShowOutput(true);
-    setWins(0);
+    // setWins(0);
     setTrades(
       fillArray(
         +enteredTotalTrades,
@@ -232,7 +231,7 @@ const PropabilityCalContainer = ({ onClick }: PropabilityCalContainerProps) => {
               onBlur={accountBalanceBlurHandler}
               value={enteredAccountBalance}
               error={accountBalanceHasError}
-              iconL={<CurrencyDollar size={20} color="#66fcf1" />}
+              iconL={<CurrencyDollar size={20} color={iconColor} />}
             />
             <InputField
               label="Risk On Trade"
@@ -244,7 +243,7 @@ const PropabilityCalContainer = ({ onClick }: PropabilityCalContainerProps) => {
               value={enteredRisk}
               step="1"
               error={riskHasError}
-              iconL={<CurrencyDollar size={20} color="#66fcf1" />}
+              iconL={<CurrencyDollar size={20} color={iconColor} />}
               iconR="R"
             />
             <InputField
@@ -290,11 +289,12 @@ const PropabilityCalContainer = ({ onClick }: PropabilityCalContainerProps) => {
               onBlur={comissionsBlurHandler}
               value={enteredComissions}
               error={comissionsHasError}
-              iconL={<CurrencyDollar size={20} color="#66fcf1" />}
+              iconL={<CurrencyDollar size={20} color={iconColor} />}
             />
             <InputField
               label="Total Trades"
               type="number"
+              max={500}
               message="Total number of trades to simulate.  Example for all trades this year 100"
               placeholder="20"
               onChange={totalTradesChangeHandler}
@@ -317,17 +317,17 @@ const PropabilityCalContainer = ({ onClick }: PropabilityCalContainerProps) => {
           </form>
           <div></div>
         </div>
+        {showOutput && (
+          <PropabilityCal
+            winStreak={winningStreak}
+            loseStreak={losingStreak}
+            comissions={comissions}
+            drawDown={drawDown}
+            balance={tradeGraph[tradeGraph.length - 1]?.Balance}
+            graphData={tradeGraph}
+          />
+        )}
       </div>
-      {showOutput && (
-        <PropabilityCal
-          winStreak={winningStreak}
-          loseStreak={losingStreak}
-          comissions={comissions}
-          drawDown={drawDown}
-          balance={account}
-          graphData={tradeGraph}
-        />
-      )}
     </Fragment>
   );
 };

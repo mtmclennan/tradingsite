@@ -1,0 +1,29 @@
+@use "../../../../styles/abstracts/variables" as v;
+
+.btnLong,
+.btnShort {
+  padding: 0.75em;
+  border: none;
+  transition: all 0.15s linear;
+}
+
+.btnLong {
+  border-radius: 10px 0 0 10px;
+}
+
+.btnShort {
+  border-radius: 0 10px 10px 0;
+}
+
+.active {
+  background-color: v.$color-primary-dark;
+  color: v.$grey-color-1;
+  border: 2px solid v.$color-primary;
+}
+
+.nonActive {
+  background-color: v.$grey-color-9;
+  border: 1px solid v.$color-secondary;
+
+  color: v.$grey-color-6;
+}

@@ -2,13 +2,15 @@ import useInput from "../../../hooks/use-input";
 import React, { Fragment, SetStateAction, useState } from "react";
 import InputField from "../../UI/calculator/InputField";
 import { CurrencyDollar } from "phosphor-react";
-import classes from "./RiskOnTradeCal.module.css";
+import classes from "./RiskOnTradeCal.module.scss";
 import { stringValidate } from "./utils";
 import OutputField from "../../UI/calculator/OutputField";
 
 const RiskOnTradeCal = () => {
   const [riskOutput, setRiskOutput] =
     useState<SetStateAction<number | string>>();
+
+  const iconColor = "#0173fd";
 
   const {
     value: enteredBalance,
@@ -67,7 +69,7 @@ const RiskOnTradeCal = () => {
             value={enteredBalance}
             step="100"
             error={balanceHasError}
-            iconL={<CurrencyDollar size={20} color="#66fcf1" />}
+            iconL={<CurrencyDollar size={20} color={iconColor} />}
           />
           <InputField
             label="Account Risk Percentage Per Trade"

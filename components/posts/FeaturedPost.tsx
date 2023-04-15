@@ -30,14 +30,16 @@ const FeaturedPost = ({ featuredPost, formatDate }: FeaturedPostProps) => {
         width={1000}
         height={500}
       />
-      <span>{`By: ${featuredPost.author}`}</span>
-      <span>{`Last Modified ${formatDate(featuredPost.dateModified)}`}</span>
-      <div className={classes.body}>
-        {postHtml && <div dangerouslySetInnerHTML={postHtml} />}
+      <div className={classes.bodyContainer}>
+        <span>{`By: ${featuredPost.author}`}</span>
+        <span>{`Last Modified ${formatDate(featuredPost.dateModified)}`}</span>
+        <div className={classes.body}>
+          {postHtml && <div dangerouslySetInnerHTML={postHtml} />}
+        </div>
+        <Link href={`/blog/${featuredPost.slug}`}>
+          <button>Read More</button>
+        </Link>
       </div>
-      <Link href={`/blog/${featuredPost.slug}`}>
-        <button>Read More</button>
-      </Link>
     </section>
   );
 };

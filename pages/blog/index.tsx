@@ -1,13 +1,11 @@
-import Image from "next/image";
-import Link from "next/link";
 import Head from "next/head";
 import { Fragment, useEffect, useState } from "react";
 import FeaturedPost from "../../components/posts/FeaturedPost";
-import Card from "../../components/UI/Card";
 import Pagination from "../../components/UI/Pagination";
 import { getAllPosts } from "../../lib/post-utils";
 import { Post } from "../../types/interfaces";
-
+import { formatDate } from "../../lib/post-utils";
+import PostCard from "../../components/posts/PostCard";
 type PostsData = {
   posts: { data: Post[] };
 };
@@ -42,15 +40,6 @@ const Blog = ({ posts }: PostsData) => {
     }
   }, [allPosts, indexOfFirstRecord, indexOfLastRecord]);
 
-  const formatDate = (date: string) => {
-    const options: Intl.DateTimeFormatOptions = {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    };
-    return new Date(date).toLocaleDateString("en-US", options);
-  };
-
   return (
     <Fragment>
       <Head>
@@ -62,41 +51,13 @@ const Blog = ({ posts }: PostsData) => {
       )}
       <div className="container">
         <div className="title">
-          <span>Welcome To The</span>
           <h1>Latest Articles</h1>
         </div>
 
         <ul className="list">
           {currentPosts &&
             currentPosts.map((post) => {
-              return (
-                <Card key={post._id}>
-                  {post.featuredImage && (
-                    <Image
-                      className="post-card__image"
-                      src={post.featuredImage}
-                      alt={post.photoCaption}
-                      width={800}
-                      height={400}
-                    />
-                  )}
-                  <div className="post-card__lower">
-                    <Link href={`/blog/${post.slug}`}>
-                      <a>
-                        <h1 className="post-card__title">{post.title}</h1>
-                      </a>
-                    </Link>
-                    <p className="post-card__small">By {post.author}</p>
-                    <p className="post-card__text">{post.description}</p>
-                    <p className="post-card__small">
-                      Last Modified: {formatDate(post.dateModified)}
-                    </p>
-                    <Link href={`/blog/${post.slug}`}>
-                      <button>Read More</button>
-                    </Link>
-                  </div>
-                </Card>
-              );
+              return <PostCard post={post} key={post._id} />;
             })}
         </ul>
         <Pagination
