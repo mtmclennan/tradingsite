@@ -2,9 +2,12 @@
 @use "../../../styles/abstracts/variables" as v;
 
 .container {
+  padding: 2rem 0;
   @include m.flexCenter(column);
   // padding: 0 3rem;
-  height: 50vh;
+  @include m.mediaDesktop() {
+    height: 50vh;
+  }
   width: 100%;
 }
 
@@ -25,14 +28,17 @@
 }
 
 .description {
-  @include m.flexCenter(column);
-  background-color: v.$darker-blue;
-  box-shadow: v.$box-shadow-dark;
-  padding: 3rem;
-  margin-bottom: -8rem;
-  max-width: 90rem;
-  & p {
-    height: fit-content;
-    // padding-bottom: 5rem;
+  display: none;
+  @include m.mediaDesktop() {
+    @include m.flexCenter(column);
+    background-color: v.$darker-blue;
+    box-shadow: v.$box-shadow-dark;
+    padding: 3rem;
+    margin-bottom: -8rem;
+    max-width: 90rem;
+    & p {
+      height: fit-content;
+      // padding-bottom: 5rem;
+    }
   }
 }

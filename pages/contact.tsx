@@ -12,7 +12,7 @@ const Contact = () => {
 
       <section className="contact-hero__section">
         <div className="contact-hero">
-          <p>Contact Us</p>
+          <h3>Contact Us</h3>
           <h1>How Can We Help?</h1>
           <p>
             Do you have questions, comments, or sugestions about content you

@@ -94,23 +94,33 @@ button {
 
 .hero__container {
   @include m.flexCenter();
+  height: 100%;
 }
 
 .hero {
-  height: 70vh;
   width: 100%;
-  @include m.flexCenter();
-  justify-content: space-evenly;
+  height: 100%;
+  padding-top: 4rem;
+  text-align: center;
+  @include m.flexCenter(column);
+  @include m.mediaDesktop {
+    height: 70vh;
+    padding: 0;
+    @include m.flexCenter();
+    justify-content: space-evenly;
+  }
 }
 
 .hero-title {
-  display: flex;
-  flex-direction: column;
-  margin-top: 8rem;
-  justify-content: center;
-  padding: 1rem 1rem 1rem 8rem;
-  width: 50%;
-  max-width: 70rem;
+  @include m.flexCenter(column);
+  // margin-top: 3rem;
+  @include m.mediaDesktop() {
+    margin-top: 8rem;
+    padding: 1rem 1rem 1rem 8rem;
+    width: 50%;
+    max-width: 70rem;
+  }
+
   & h3 {
     font-size: 3rem;
     letter-spacing: 0.1rem;
@@ -125,7 +135,11 @@ button {
 
 .hero-logo {
   @include m.flexCenter();
-  width: 50%;
+  padding: 4em;
+  margin-top: 2rem;
+  @include m.mediaDesktop() {
+    width: 50%;
+  }
   height: 100%;
 }
 
@@ -135,18 +149,11 @@ button {
   height: 100%;
 
   position: relative;
-  max-width: 30vw;
+
+  @include m.mediaDesktop() {
+    max-width: 30vw;
+  }
   // height: fit-content;
-}
-
-@media (min-width: 800px) {
-  .hero {
-  }
-}
-
-@media (min-width: 1200px) {
-  .hero-title {
-  }
 }
 
 .hero h1 {
@@ -350,10 +357,19 @@ button {
 }
 
 .contact-hero__section {
-  height: 30vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 2rem 0;
+  @include m.flexCenter();
+  @include m.mediaDesktop() {
+    height: 30vh;
+  }
+}
+
+.contact-hero {
+  & h3 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
 }
 
 .contact-hero .contact-hero {
@@ -433,9 +449,12 @@ button {
 
 .tool-card__container {
   @include m.flexCenter();
+  padding: 2rem 0 2rem;
   gap: 2rem;
   flex-wrap: wrap;
   width: 100%;
   background-color: v.$color-primary-dark;
-  padding: 15rem 3rem;
+  @include m.mediaDesktop() {
+    padding: 15rem 3rem;
+  }
 }

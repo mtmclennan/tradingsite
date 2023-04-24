@@ -11,6 +11,10 @@
   background-color: v.$color-neutral-dark;
 
   // background-color: v.$transparent;
+  & h1 {
+    padding: 0 2rem;
+    text-align: center;
+  }
 }
 
 .container button {

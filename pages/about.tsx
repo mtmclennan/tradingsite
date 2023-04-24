@@ -1,5 +1,7 @@
 import { Fragment } from "react";
 import Head from "next/head";
+import Image from "next/image";
+import logo from "../public/assets/Color EM Large logo - no background.png";
 
 const About = () => {
   return (
@@ -10,8 +12,10 @@ const About = () => {
       </Head>
       <section className="contact-hero__section">
         <div className="contact-hero">
-          <p>About</p>
-          <h1>EdgeInMind</h1>
+          <h3>About</h3>
+          <div>
+            <Image src={logo} alt="EdgeInMind" layout="responsive" />
+          </div>
           <p>Here to help you with your financial goals!</p>
         </div>
       </section>
