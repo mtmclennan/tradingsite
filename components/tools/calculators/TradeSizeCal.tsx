@@ -31,6 +31,7 @@ const TradeSizeCal = () => {
 
   const [Output, setOutput] = useState(initiaState);
   const [toggleDirection, setToggleDirection] = useState(true);
+  const [disableBtn, setDisableBtn] = useState(false);
 
   const {
     value: enteredRisk,
@@ -77,8 +78,9 @@ const TradeSizeCal = () => {
   } = useInput(stringValidate);
 
   const onSubmitHandler = (event: React.FormEvent) => {
-    console.log(toggleDirection);
     event.preventDefault();
+
+    setDisableBtn(true);
     riskBlurHandler();
     priceBlurHandler();
     tickerBlurHandler();
@@ -119,6 +121,7 @@ const TradeSizeCal = () => {
   };
 
   const resetFormHandler = () => {
+    setDisableBtn(false);
     resetPrice();
     resetRisk();
     resetRiskReward();
@@ -150,6 +153,7 @@ const TradeSizeCal = () => {
               <ToggleButton
                 setToggleDirection={setToggleDirection}
                 toggleDirection={toggleDirection}
+                disable={disableBtn}
               />
             }
           </InputField>

@@ -5,18 +5,20 @@ import classes from "./ToggleButton.module.scss";
 interface ToggleButtonProps {
   toggleDirection: boolean;
   setToggleDirection: SetStateBoolean;
+  disable: boolean;
 }
 
 const ToggleButton = ({
   toggleDirection,
   setToggleDirection,
+  disable = false,
 }: ToggleButtonProps) => {
   const longBtnHandler = () => {
-    setToggleDirection(true);
+    if (!disable) setToggleDirection(true);
   };
 
   const shortBtnHandler = () => {
-    setToggleDirection(false);
+    if (!disable) setToggleDirection(false);
   };
 
   return (

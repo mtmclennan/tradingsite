@@ -3,6 +3,7 @@ import Head from "next/head";
 import TabNav from "../../components/UI/calculator/TabNav";
 import TradingPlan from "../../components/tools/TradingPlan/TradingPlan";
 import CalculatorHeading from "../../components/UI/calculator/CalulatorHeading";
+import BetaTest from "../../components/UI/calculator/BetaTest";
 
 const TradingPlanCreator = () => {
   return (
@@ -17,16 +18,17 @@ const TradingPlanCreator = () => {
       <CalculatorHeading title="Trading Plan Creator" />
       <TabNav
         tabs={[
-          { label: "Trade Order", link: "/tools/trade-size-calculator" },
+          { label: "Trade Order", link: "/tools/trade-order-calculator" },
           {
             label: "Trade Order ATR",
-            link: "/tools/trade-size-calculator-atr",
+            link: "/tools/trade-order-calculator-atr",
           },
-          { label: "Risk On Trade", link: "/tools/risk-on-trade" },
-          { label: "Curve Simulator", link: "/tools/probability" },
+          { label: "Risk On Trade", link: "/tools/risk-on-trade-calculator" },
+          { label: "Curve Simulator", link: "/tools/equity-curve-simulator" },
         ]}
       />
       <TradingPlan />
+      <BetaTest />
     </Fragment>
   );
 };

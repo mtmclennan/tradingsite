@@ -5,10 +5,12 @@ import Modal from "../UI/Modal";
 import React, { Fragment, useState } from "react";
 import { Res } from "../../types/interfaces";
 import { emailValidate, stringValidate } from "../../lib/input-utils";
+import { useRouter } from "next/router";
 
 const ContactForm = () => {
   const { sendRequest, error, isLoading } = useHttp();
   const [showModal, setShowModal] = useState(false);
+  const router = useRouter();
 
   const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_CONTACT_URL;
 
@@ -71,6 +73,9 @@ const ContactForm = () => {
         resetmessage();
         resetTopic();
         setShowModal(true);
+        setTimeout(() => {
+          router.push("/");
+        }, 2000);
       }
     };
 
@@ -85,7 +90,7 @@ const ContactForm = () => {
           firstName: enteredFirstName,
           lastName: enteredLastName,
           email: enteredEmail,
-          topic: enteredTopic,
+          subject: enteredTopic,
           message: enteredMessage,
         },
       },
@@ -101,8 +106,9 @@ const ContactForm = () => {
     <Fragment>
       {showModal && (
         <Modal onClose={showModalHandler}>
-          <div>
-            <h1>Thank you</h1>
+          <div className="contact-form__modal-backing"></div>
+          <div className="contact-form__modal">
+            <h1>Thank you!</h1>
           </div>
         </Modal>
       )}

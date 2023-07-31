@@ -31,6 +31,7 @@ const TradeSizeCalAtr = () => {
 
   const [toggleDirection, setToggleDirection] = useState(true);
   const [output, setOutput] = useState(initiaState);
+  const [disableBtn, setDisableBtn] = useState(false);
 
   const {
     value: enteredRisk,
@@ -85,6 +86,8 @@ const TradeSizeCalAtr = () => {
 
   const onSubmitHandler = (event: React.FormEvent) => {
     event.preventDefault();
+
+    setDisableBtn(true);
     riskBlurHandler();
     priceBlurHandler();
     tickerBlurHandler();
@@ -132,6 +135,7 @@ const TradeSizeCalAtr = () => {
   };
 
   const resetFormHandler = () => {
+    setDisableBtn(false);
     resetATRMuti();
     resetPrice();
     resetRisk();
@@ -164,6 +168,7 @@ const TradeSizeCalAtr = () => {
               <ToggleButton
                 setToggleDirection={setToggleDirection}
                 toggleDirection={toggleDirection}
+                disable={disableBtn}
               />
             }
           </InputField>

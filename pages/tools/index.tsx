@@ -1,7 +1,6 @@
 import { Fragment } from "react";
 import Head from "next/head";
 import Hero from "../../components/UI/calculator/Hero";
-import TabNav from "../../components/UI/calculator/TabNav";
 import ToolCard from "../../components/UI/calculator/ToolCard";
 
 const Tools = () => {
@@ -18,22 +17,22 @@ const Tools = () => {
       <div className="tool-card__container">
         <ToolCard
           title="Trade Order Calculator"
-          link="/tools/trade-size-calculator"
+          link="/tools/trade-order-calculator"
           description="Calculate order entry and exit prices, number of shares and more.  Uses fixed dollar amount for stop loss placement"
         />
         <ToolCard
           title="Trade Order Calculator ATR"
-          link="/tools/trade-size-calculator-atr"
+          link="/tools/trade-order-calculator-atr"
           description="Calculate order entry and exit prices, and number of shares.  Uses ATR (average true range) indicator for stop loss placement"
         />
         <ToolCard
           title="Risk On Trade Calculator"
-          link="/tools/risk-on-trade"
+          link="/tools/risk-on-trade-calculator"
           description="Calculates the maximum money amount you should put at risk on one trade"
         />
         <ToolCard
           title="Equity Curve Simulator"
-          link="/tools/probability"
+          link="/tools/equity-curve-simulator"
           description="Simulates winning and lossing steaks, plus equity curve and more"
         />
       </div>

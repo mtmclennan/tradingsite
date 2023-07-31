@@ -1,0 +1,46 @@
+@use "../../styles/abstracts/mixins" as m;
+@use "../../styles/abstracts/variables" as v;
+
+.container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-height: 7rem;
+  background-color: v.$grey-color-0;
+  color: v.$text-color-dark;
+  padding: 2rem;
+  @include m.flexCenter(column);
+  gap: 2rem;
+  z-index: 1000;
+  -webkit-box-shadow: 0px -4px 42px 5px rgba(0, 0, 0, 0.35);
+  box-shadow: 0px -4px 42px 5px rgba(0, 0, 0, 0.35);
+
+  & a {
+    padding: 1rem;
+    border: 1px solid v.$grey-color-9;
+    border-radius: 5px;
+    &:hover {
+      background-color: v.$grey-color-4;
+    }
+  }
+
+  & button {
+    padding: 1rem 2rem;
+    background-color: v.$color-primary;
+    border: none;
+    border-radius: 5px;
+    color: v.$text-color-dark;
+    font-weight: 700;
+    font-size: 1.7rem;
+    &:hover,
+    :focus {
+      background-color: v.$grey-color-5;
+    }
+  }
+}
+
+.wrapper {
+  @include m.flexCenter();
+  gap: 1rem;
+}

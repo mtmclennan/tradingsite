@@ -1,4 +1,4 @@
-import { NextPageContext, GetStaticProps } from "next";
+import { GetStaticProps } from "next";
 import { ParsedUrlQuery } from "querystring";
 import Head from "next/head";
 import { Fragment } from "react";
@@ -40,7 +40,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
 export async function getStaticPaths() {
   const posts = await getAllPosts();
 
-  console.log(posts.data[0].slug);
   const slugs = posts.data.map((post: Post) => post.slug);
 
   return {

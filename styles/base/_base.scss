@@ -458,3 +458,78 @@ button {
     padding: 15rem 3rem;
   }
 }
+
+.terms {
+  background-color: v.$grey-color-0;
+  height: 100%;
+
+  padding: 3rem;
+  color: v.$text-color-dark;
+
+  & p {
+    max-width: 85rem;
+  }
+}
+
+.terms__wrapper {
+  width: 100%;
+  @include m.flexCenter(column);
+  background-color: v.$grey-color-0;
+}
+
+.terms__container {
+  @include m.flexCenter(column);
+}
+
+.terms__heading {
+  margin: 2rem;
+  @include m.flexCenter(column);
+  gap: 3rem;
+  & h5 {
+    font-size: 4.8rem;
+  }
+}
+
+.beta-test-disclaimer {
+  @include m.flexCenter(column);
+
+  padding: 2rem;
+  margin: 1rem;
+
+  & h3 {
+    margin: 1rem;
+  }
+  & p {
+    max-width: 80rem;
+  }
+}
+
+.beta-test__button-container {
+  @include m.flexCenter();
+  gap: 1rem;
+  margin: 1rem;
+  & button,
+  a {
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: v.$color-primary;
+    border: none;
+    &:hover {
+      background-color: v.$color-primary-light;
+    }
+  }
+}
+
+.contact-form__modal {
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  color: v.$color-primary;
+  background-color: v.$grey-color-2;
+  text-align: center;
+
+  & h1 {
+    font-size: 4rem;
+  }
+}

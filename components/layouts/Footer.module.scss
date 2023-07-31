@@ -26,6 +26,22 @@
   letter-spacing: 0.2rem;
 }
 
+.legal {
+  @include m.flexCenter(column);
+  @include m.mediaDesktop() {
+    align-items: flex-start;
+  }
+
+  gap: 1rem;
+  font-size: 1.5rem;
+  & a {
+    color: v.$grey-color-6;
+    &:hover {
+      color: v.$color-primary;
+    }
+  }
+}
+
 .nav a:hover,
 .nav a:focus {
   color: v.$color-primary;
