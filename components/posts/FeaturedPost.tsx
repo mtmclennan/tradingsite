@@ -20,9 +20,9 @@ const FeaturedPost = ({ featuredPost, formatDate }: FeaturedPostProps) => {
   return (
     <section className={classes.container}>
       <Link href={`/blog/${featuredPost.slug}`}>
-        <a>
-          <h1 className={classes.title}>{featuredPost.title}</h1>
-        </a>
+
+        <h1 className={classes.title}>{featuredPost.title}</h1>
+
       </Link>
       <Image
         src={featuredPost.featuredImage}
@@ -36,7 +36,7 @@ const FeaturedPost = ({ featuredPost, formatDate }: FeaturedPostProps) => {
         <div className={classes.body}>
           {postHtml && <div dangerouslySetInnerHTML={postHtml} />}
         </div>
-        <Link href={`/blog/${featuredPost.slug}`}>
+        <Link href={`/blog/${featuredPost.slug}`} legacyBehavior>
           <button>Read More</button>
         </Link>
       </div>

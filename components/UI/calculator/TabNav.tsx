@@ -21,8 +21,8 @@ const TabNav = ({ tabs }: TabNavProps) => {
       currentRoute === link ? classes.active : classes.nonActive;
 
     return (
-      <Link href={link}>
-        <a className={className}>{label}</a>
+      <Link href={link} className={className}>
+        {label}
       </Link>
     );
   };

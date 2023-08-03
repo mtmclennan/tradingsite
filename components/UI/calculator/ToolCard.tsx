@@ -25,7 +25,7 @@ const ToolCard = ({ link, title, description }: ToolCardProps) => {
           <p>{description}</p>
           {/* <h3>Outputs</h3> */}
           {/* <p>{output}</p> */}
-          <Link href={link}>
+          <Link href={link} legacyBehavior>
             <button>Use</button>
           </Link>
         </Fragment>
