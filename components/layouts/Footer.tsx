@@ -29,40 +29,38 @@ const Footer = () => {
         />
       )}
       <div className={classes.logo}>
-        <Image src={logo} alt="EdgeInMind" layout="responsive" />
+        <Image  src={logo} alt="EdgeInMind" fill/>
       </div>
       <div className={classes.nav}>
         <ul>
           <li>
-            <Link href="/">
-              <a className={homeClassname}>Home</a>
+            <Link href="/"className={homeClassname}>Home
             </Link>
           </li>
           <li>
-            <Link href="/blog">
-              <a className={blogClassname}>Blog</a>
+            <Link href="/blog" className={blogClassname}>Blog
             </Link>
           </li>
           <li>
-            <Link href="/tools">
-              <a className={toolsClassname}>Tools</a>
+            <Link href="/tools"
+              className={toolsClassname}>Tools
             </Link>
           </li>
           <li>
-            <Link href="/about">
-              <a className={aboutClassname}>About</a>
+            <Link href="/about"
+              className={aboutClassname}>About
             </Link>
           </li>
           <li>
-            <Link href="/contact">
-              <a className={contactClassname}>Contact</a>
+            <Link href="/contact"
+               className={contactClassname}>Contact
             </Link>
           </li>
         </ul>
       </div>
       <div className={classes.legal}>
-        <Link href="/legal/disclaimer">Disclaimer</Link>{" "}
-        <Link href="/legal">Terms and Conditions</Link>{" "}
+        <Link href="/legal/disclaimer">Disclaimer</Link>
+        <Link href="/legal">Terms and Conditions</Link>
         <Link href="/legal/privacy-policy">Privacy Policy</Link>
       </div>
       <div className={classes.copyright}>

@@ -31,35 +31,35 @@ const MainHeader = ({ currentRoute }: { currentRoute: string }) => {
         <nav className={classes.nav}>
           <div className={classes.logo}>
             <Link href="/">
-              <a>
+              
                 <Image src={Logo} alt="EdgeInMind" layout="fill" />
-              </a>
+              
             </Link>
           </div>
           <ul>
             <li>
-              <Link href="/">
-                <a className={homeClassname}>Home</a>
+              <Link href="/"
+                className={homeClassname}>Home
               </Link>
             </li>
             <li>
-              <Link href="/blog">
-                <a className={blogClassname}>Blog</a>
+              <Link href="/blog"
+                 className={blogClassname}>Blog
               </Link>
             </li>
             <li>
-              <Link href="/tools">
-                <a className={toolsClassname}>Tools</a>
+              <Link href="/tools"
+                className={toolsClassname}>Tools
               </Link>
             </li>
             <li>
-              <Link href="/about">
-                <a className={aboutClassname}>About</a>
+              <Link href="/about"
+                className={aboutClassname}>About
               </Link>
             </li>
             <li>
-              <Link href="/contact">
-                <a className={contactClassname}>Contact</a>
+              <Link href="/contact"
+              className={contactClassname}>Contact
               </Link>
             </li>
           </ul>

@@ -16,7 +16,6 @@ export default async function handler(
 
   try {
     await res.unstable_revalidate(`/blog`);
-    await res.unstable_revalidate(`/blog/${slug}`);
     console.log("Build hook");
     return res.status(200).json({ revalidated: true });
   } catch (err) {
