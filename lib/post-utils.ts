@@ -1,5 +1,8 @@
 export const getAllPosts = async () => {
-  if (!process.env.SERVER_URL) return;
+  if (!process.env.SERVER_URL) {
+    console.log("ERROR: NO SERVER URL in process.env");
+    return;
+  }
   const res = await fetch(process.env.SERVER_URL);
   const posts = await res.json();
   return posts;
@@ -13,6 +16,7 @@ export const getBySlug = async (slug: string) => {
   const post = await res.json();
 
   if (!res.ok) {
+    console.log("Not OK");
     throw new Error(`Failed to fetch post, received status ${res.status}`);
   }
 
