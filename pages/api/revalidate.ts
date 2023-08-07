@@ -13,9 +13,10 @@ export default async function handler(
     return res.status(422).json({ message: "Invalid request body" });
   }
   const slug = req.body.slug;
-  console.log(slug);
+
   try {
     await res.revalidate(`/blog`);
+    await res.revalidate(`/blog/${slug}`);
     console.log("Build hook");
     return res.status(200).json({ revalidated: true });
   } catch (err) {
