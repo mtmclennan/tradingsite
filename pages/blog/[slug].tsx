@@ -34,9 +34,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       post: postData.data,
     },
-    revalidate: process.env.REVALIDATE_TIMING
-      ? +process.env.REVALIDATE_TIMING
-      : 86400,
+    // revalidate: process.env.REVALIDATE_TIMING
+    //   ? +process.env.REVALIDATE_TIMING
+    //   : 86400,
   };
 };
 
