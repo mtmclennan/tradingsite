@@ -2,7 +2,7 @@ import { GetStaticProps } from "next";
 import { ParsedUrlQuery } from "querystring";
 import Head from "next/head";
 import { Fragment } from "react";
-import PostContent from "../../components/posts/post-content";
+import PostContent from "../../components/posts/PostContent";
 import { getAllPosts, getBySlug } from "../../lib/post-utils";
 import { Post } from "../../types/interfaces";
 
