@@ -2,8 +2,8 @@ import classes from "./Footer.module.scss";
 import { useState } from "react";
 import Link from "next/link";
 import Banner from "../UI/Banner";
-import Image from "next/image";
-import logo from "../../public/assets/Color EM Large logo - no background.png";
+import Image from "next/legacy/image";
+import logo from "../../public/assets/ColorEMLargelogo-nobackground.png";
 import { useRouter } from "next/router";
 
 const Footer = () => {
@@ -29,31 +29,33 @@ const Footer = () => {
         />
       )}
       <div className={classes.logo}>
-        <Image  src={logo} alt="EdgeInMind" fill/>
+        <Image src={logo} alt="EdgeInMind" layout="responsive" />
       </div>
       <div className={classes.nav}>
         <ul>
           <li>
-            <Link href="/"className={homeClassname}>Home
+            <Link href="/" className={homeClassname}>
+              Home
             </Link>
           </li>
           <li>
-            <Link href="/blog" className={blogClassname}>Blog
+            <Link href="/blog" className={blogClassname}>
+              Blog
             </Link>
           </li>
           <li>
-            <Link href="/tools"
-              className={toolsClassname}>Tools
+            <Link href="/tools" className={toolsClassname}>
+              Tools
             </Link>
           </li>
           <li>
-            <Link href="/about"
-              className={aboutClassname}>About
+            <Link href="/about" className={aboutClassname}>
+              About
             </Link>
           </li>
           <li>
-            <Link href="/contact"
-               className={contactClassname}>Contact
+            <Link href="/contact" className={contactClassname}>
+              Contact
             </Link>
           </li>
         </ul>

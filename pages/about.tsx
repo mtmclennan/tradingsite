@@ -1,13 +1,13 @@
 import { Fragment } from "react";
 import Head from "next/head";
-import Image from "next/image";
-import logo from "../public/assets/Color EM Large logo - no background.png";
+import Image from "next/legacy/image";
+import logo from "../public/assets/ColorEMLargelogo-nobackground.png";
 
 const About = () => {
   return (
     <Fragment>
       <Head>
-        <title>About</title>
+        <title>About | EDGEINMIND</title>
         <meta name="description" content="About Edgeinmind company" />
       </Head>
       <section className="contact-hero__section">

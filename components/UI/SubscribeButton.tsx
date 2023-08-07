@@ -1,10 +1,10 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import React, { Fragment, useState } from "react";
 import useHttp from "../../hooks/use-http";
 import useInput from "../../hooks/use-input";
 import { emailValidate } from "../../lib/input-utils";
 import { Res } from "../../types/interfaces";
-import logo from "../../public/assets/Color EM Large logo - no background.png";
+import logo from "../../public/assets/ColorEMLargelogo-nobackground.png";
 import Modal from "./Modal";
 import classes from "./SubscribeButton.module.scss";
 

@@ -7,8 +7,14 @@ const Tools = () => {
   return (
     <Fragment>
       <Head>
-        <title>Trading Tools/Calculators</title>
-        <meta name="description" content="Tools home" />
+        <title>
+          Trading Tools/Calculators | EDGEINMIND: Streamline Decisions, Amplify
+          Profits
+        </title>
+        <meta
+          name="description"
+          content="Empower your trading decisions with EdgeInMind's comprehensive suite of tools and calculators. Streamline your strategies, simplify complex choices, and gain a competitive edge in the markets. Elevate your trading game today."
+        />
       </Head>
       <Hero
         title="Calculators & Trading Tools"

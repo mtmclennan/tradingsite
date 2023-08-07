@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <Fragment>
       <Head>
-        <title>Contact</title>
+        <title>Contact | EDGEINMIND: How Can we Help?</title>
         <meta name="description" content="Contact page" />
       </Head>
 

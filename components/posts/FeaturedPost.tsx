@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import { useEffect } from "react";
 import classes from "./FeaturedPost.module.scss";
@@ -31,7 +31,7 @@ const FeaturedPost = ({ featuredPost, formatDate }: FeaturedPostProps) => {
         height={500}
       />
       <div className={classes.bodyContainer}>
-        <span>{`By: ${featuredPost.author}`}</span>
+        {/* <span>{`By: ${featuredPost.author}`}</span> */}
         <span>{`Last Modified ${formatDate(featuredPost.dateModified)}`}</span>
         <div className={classes.body}>
           {postHtml && <div dangerouslySetInnerHTML={postHtml} />}

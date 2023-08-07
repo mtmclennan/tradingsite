@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { Fragment, useEffect } from "react";
 import useRemark from "../../hooks/use-remark";
 import { DateOptions } from "../../types/index.types";
@@ -29,7 +29,7 @@ function PostContent({ post }: PostContentProps) {
       <section className="post__title">
         <h1>{post.title}</h1>
         <div className="post__info">
-          <p>By: {post.author}</p>
+          {/* <p>By: {post.author}</p> */}
           <p>Last Modified: {formatDate(post.dateModified)}</p>
         </div>
       </section>

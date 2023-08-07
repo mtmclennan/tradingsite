@@ -9,7 +9,7 @@ const RiskOnTrade = () => {
   return (
     <Fragment>
       <Head>
-        <title>Risk On Trade Calculator</title>
+        <title>Risk On Trade Calculator | EDGEINMIND</title>
         <meta
           name="description"
           content="Risk On Trade Calculator, calculates how much money you should risk on each trade, based on the account size and the percentage of the account you are willing to risk"

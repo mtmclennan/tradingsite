@@ -43,8 +43,13 @@ const Blog = ({ posts }: PostsData) => {
   return (
     <Fragment>
       <Head>
-        <title>Blog</title>
-        <meta name="description" content="Blog home" />
+        <title>
+          Blog | EDGEINMIND: Mastering Stock Market Mindset for Success
+        </title>
+        <meta
+          name="description"
+          content="EDGEINMIND: Your gateway to gaining an upper hand in the market. Harness the power of mindset, refine your approach, and achieve trading excellence."
+        />
       </Head>
       {featuredPost && (
         <FeaturedPost featuredPost={featuredPost} formatDate={formatDate} />
@@ -80,6 +85,9 @@ export async function getStaticProps() {
   // will receive `posts` as a prop at build time
   return {
     props: { posts },
+    revalidate: process.env.REVALIDATE_TIMING
+      ? +process.env.REVALIDATE_TIMING
+      : 86400,
   };
 }
 

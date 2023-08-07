@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import Head from "next/head";
-import Image from "next/image";
-import logo from "../public/assets/Color EM Large logo - no background.png";
+import Image from "next/legacy/image";
+import logo from "../public/assets/ColorEMLargelogo-nobackground.png";
 import { useRouter } from "next/router";
 
 const HomePage = () => {
@@ -10,8 +10,11 @@ const HomePage = () => {
   return (
     <Fragment>
       <Head>
-        <title>EDGEINMIND</title>
-        <meta name="description" content="EdgeInMind landing page" />
+        <title>Home | EDGEINMIND</title>
+        <meta
+          name="description"
+          content="EdgeInMind: Your gateway to gaining an upper hand in the market. Harness the power of mindset, refine your approach, and achieve trading excellence."
+        />
       </Head>
       <div className="hero__container">
         <section className="hero">
