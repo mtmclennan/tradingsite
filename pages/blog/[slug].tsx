@@ -34,9 +34,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       post: postData.data,
     },
-    // revalidate: process.env.REVALIDATE_TIMING
-    //   ? +process.env.REVALIDATE_TIMING
-    //   : 86400,
+    revalidate: 60,
   };
 };
 
@@ -46,7 +44,7 @@ export async function getStaticPaths() {
   const slugs = posts.data.map((post: Post) => post.slug);
 
   return {
-    paths: slugs.map((slug: string) => ({ params: { slug: slug } })),
+    paths: slugs.map((slug: string) => ({ params: { slug: `/blog/${slug}` } })),
     fallback: true,
   };
 }
