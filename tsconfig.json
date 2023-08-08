@@ -19,7 +19,6 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "components/tools/TradeSIzeCal.js",
     "hooks/use-remark.ts",
     "pages/blog/index.js",
     "components/UI/calculator/OutputField.tsx",

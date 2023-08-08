@@ -15,14 +15,12 @@ const FeaturedPost = ({ featuredPost, formatDate }: FeaturedPostProps) => {
 
   useEffect(() => {
     convertMd(featuredPost.postBody.slice(0, 500));
-  }, []);
+  }, [featuredPost, convertMd]);
 
   return (
     <section className={classes.container}>
       <Link href={`/blog/${featuredPost.slug}`}>
-
         <h1 className={classes.title}>{featuredPost.title}</h1>
-
       </Link>
       <Image
         src={featuredPost.featuredImage}

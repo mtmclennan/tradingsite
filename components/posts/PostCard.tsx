@@ -26,9 +26,7 @@ const PostCard = ({ post }: { post: Post }) => {
         <p className="post-card__small">
           Last Modified: {formatDate(post.dateModified)}
         </p>
-        <Link href={`/blog/${post.slug}`}>
-          <button>Read More</button>
-        </Link>
+        <Link href={`/blog/${post.slug}`}>Read More</Link>
       </div>
     </Card>
   );

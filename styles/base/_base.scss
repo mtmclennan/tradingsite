@@ -230,6 +230,15 @@ button {
 .post-card__lower {
   margin: 1rem;
   overflow: hidden;
+  & a:last-child {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    color: v.$text-color-light;
+    background-color: v.$color-primary;
+  }
 }
 
 .post__container {
@@ -248,13 +257,13 @@ button {
   /* color: var(--grey-color-8); */
 }
 
-@media (min-width: 800px) {
-  // .post__container {
-  //   width: 800px;
-  // }
-  .post__title h1 {
-  }
-}
+// @media (min-width: 800px) {
+//   // .post__container {
+//   //   width: 800px;
+//   // }
+//   .post__title h1 {
+//   }
+// }
 
 .post__title {
   display: flex;

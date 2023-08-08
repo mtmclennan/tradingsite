@@ -1,8 +1,9 @@
 import Image from "next/legacy/image";
 import { Fragment, useEffect } from "react";
 import useRemark from "../../hooks/use-remark";
-import { DateOptions } from "../../types/index.types";
+// import { DateOptions } from "../../types/index.types";
 import { Post } from "../../types/interfaces";
+import { formatDate } from "../../lib/post-utils";
 
 type PostContentProps = {
   post: Post;
@@ -11,18 +12,18 @@ type PostContentProps = {
 function PostContent({ post }: PostContentProps) {
   const { postHtml, convertMd } = useRemark();
 
-  const formatDate = (date: string) => {
-    const options: DateOptions = {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    };
-    return new Date(date).toLocaleDateString("en", options);
-  };
+  // const formatDate = (date: string) => {
+  //   const options: DateOptions = {
+  //     year: "numeric",
+  //     month: "long",
+  //     day: "numeric",
+  //   };
+  //   return new Date(date).toLocaleDateString("en", options);
+  // };
 
   useEffect(() => {
     convertMd(post.postBody);
-  }, []);
+  }, [post.postBody, convertMd]);
 
   return (
     <Fragment>

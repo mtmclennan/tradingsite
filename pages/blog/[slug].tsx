@@ -14,10 +14,10 @@ function PostDetailPage({ post }: PostDetailPageProps) {
   return (
     <Fragment>
       <Head>
-        <title>{post.title}</title>
-        <meta name="description" content={post.description} />
+        <title>{post ? post.title : ""}</title>
+        <meta name="description" content={post ? post.description : ""} />
       </Head>
-      <PostContent post={post} />
+      {post ? <PostContent post={post} /> : ""}
     </Fragment>
   );
 }
@@ -47,7 +47,7 @@ export async function getStaticPaths() {
 
   return {
     paths: slugs.map((slug: string) => ({ params: { slug: slug } })),
-    fallback: false,
+    fallback: true,
   };
 }
 

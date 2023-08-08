@@ -30,9 +30,12 @@ const MainHeader = ({ currentRoute }: { currentRoute: string }) => {
       <header className={`${classes.header}`}>
         <nav className={classes.nav}>
           <div className={classes.logo}>
-            <Link href="/" legacyBehavior>
-              <Image src={Logo} alt="EdgeInMind" layout="fill" />
-            </Link>
+            <Image
+              src={Logo}
+              alt="EdgeInMind"
+              layout="fill"
+              onClick={() => router.push("/")}
+            />
           </div>
           <ul>
             <li>
