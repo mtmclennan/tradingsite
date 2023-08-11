@@ -34,7 +34,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       post: postData.data,
     },
-    revalidate: 60,
   };
 };
 
@@ -45,7 +44,7 @@ export async function getStaticPaths() {
 
   return {
     paths: slugs.map((slug: string) => ({ params: { slug } })),
-    fallback: true,
+    fallback: false,
   };
 }
 

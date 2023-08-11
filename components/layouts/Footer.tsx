@@ -2,7 +2,7 @@ import classes from "./Footer.module.scss";
 import { useState } from "react";
 import Link from "next/link";
 import Banner from "../UI/Banner";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import logo from "../../public/assets/ColorEMLargelogo-nobackground.png";
 import { useRouter } from "next/router";
 
@@ -29,7 +29,7 @@ const Footer = () => {
         />
       )}
       <div className={classes.logo}>
-        <Image src={logo} alt="EdgeInMind" layout="responsive" />
+        <Image src={logo} alt="EdgeInMind" height={150} width={259} />
       </div>
       <div className={classes.nav}>
         <ul>

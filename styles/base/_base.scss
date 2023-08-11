@@ -274,6 +274,10 @@ button {
   height: 52vh;
   width: 100%;
   background-color: v.$transparent;
+  @include m.mediaPhone {
+    height: 15vh;
+    min-height: 12rem;
+  }
   & h1 {
     @include m.mediaDesktop {
       font-size: 5rem;
@@ -295,8 +299,17 @@ button {
 }
 
 .post__image-container {
-  margin-top: -33rem;
+  position: relative;
+  margin-top: -30rem;
   max-width: 1000px;
+  max-height: 500px;
+  min-width: 80vw;
+  min-height: calc(80vw / 2);
+  @include m.mediaPhone() {
+    margin-top: 0;
+    min-width: 100vw;
+    min-height: calc(100vw / 2);
+  }
 }
 
 .post__body {

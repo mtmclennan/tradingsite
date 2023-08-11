@@ -4,5 +4,8 @@ const nextConfig = {
   images: {
     domains: ["localhost", "pluralpost.com"],
   },
+  compiler: {
+    removeConsole: false,
+  },
 };
 module.exports = nextConfig;

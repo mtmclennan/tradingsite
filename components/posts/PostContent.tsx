@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { Fragment, useEffect } from "react";
 import useRemark from "../../hooks/use-remark";
 // import { DateOptions } from "../../types/index.types";
@@ -40,8 +40,8 @@ function PostContent({ post }: PostContentProps) {
             <Image
               src={post.featuredImage}
               alt={post.photoCaption}
-              width={1000}
-              height={500}
+              style={{ width: "100%" }}
+              fill
             />
           )}
         </div>
