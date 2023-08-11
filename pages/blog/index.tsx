@@ -85,9 +85,7 @@ export async function getStaticProps() {
   // will receive `posts` as a prop at build time
   return {
     props: { posts },
-    revalidate: process.env.REVALIDATE_TIMING
-      ? +process.env.REVALIDATE_TIMING
-      : 60,
+    revalidate: 60,
   };
 }
 
