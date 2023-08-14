@@ -16,13 +16,13 @@ export default async function handler(
   console.log(slug);
 
   // try {
-    // await res.revalidate(`/blog`);
-    await res.revalidate(`/blog/${slug}`);
-    console.log("Build hook");
-    
-    return res.status(200).json({ revalidated: true });
+  // await res.revalidate(`/blog`);
+  await res.revalidate(`/blog/${slug}`);
+  console.log("Build hook");
+
+  return res.status(200).json({ revalidated: true });
   // } catch (err) {
-    // console.log(err);
-    return res.status(500).send("Error revalidating");
-  }
+  // console.log(err);
+  return res.status(500).send("Error revalidating");
+  // }
 }
