@@ -15,13 +15,14 @@ export default async function handler(
   const slug = req.body.slug;
   console.log(slug);
 
-  try {
+  // try {
     // await res.revalidate(`/blog`);
     await res.revalidate(`/blog/${slug}`);
     console.log("Build hook");
+    
     return res.status(200).json({ revalidated: true });
-  } catch (err) {
-    console.log(err);
+  // } catch (err) {
+    // console.log(err);
     return res.status(500).send("Error revalidating");
   }
 }
