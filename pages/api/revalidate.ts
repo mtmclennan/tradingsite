@@ -13,6 +13,7 @@ export default async function handler(
     return res.status(422).json({ message: "Invalid request body" });
   }
   const slug = req.body.slug;
+  console.log(slug);
 
   try {
     // await res.revalidate(`/blog`);
