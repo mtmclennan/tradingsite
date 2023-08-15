@@ -34,9 +34,7 @@ const FeaturedPost = ({ featuredPost, formatDate }: FeaturedPostProps) => {
         <div className={classes.body}>
           {postHtml && <div dangerouslySetInnerHTML={postHtml} />}
         </div>
-        <Link href={`/blog/${featuredPost.slug}`} legacyBehavior>
-          <button>Read More</button>
-        </Link>
+        <Link href={`/blog/${featuredPost.slug}`}>Read More</Link>
       </div>
     </section>
   );

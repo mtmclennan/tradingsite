@@ -15,6 +15,7 @@ export const getBySlug = async (slug: string) => {
 
   const post = await res.json();
 
+  console.log(post);
   if (!res.ok) {
     console.log("Not OK");
     throw new Error(`Failed to fetch post, received status ${res.status}`);
