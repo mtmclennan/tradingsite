@@ -59,7 +59,7 @@ const ContactForm = () => {
     if (!enteredEmailIsValid || !messageIsValid) {
       return;
     }
-    console.log(SERVER_URL);
+    // console.log(SERVER_URL);
     if (!SERVER_URL) return;
 
     if (error) {

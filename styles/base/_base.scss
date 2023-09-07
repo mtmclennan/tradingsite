@@ -211,7 +211,11 @@ button {
 }
 
 .post-card__image {
+  position: relative;
+  aspect-ratio: 2/1;
+  width: 100%;
   border-radius: 5px 5px 0 0;
+  border: none;
 }
 
 .post-card__title {
@@ -228,16 +232,26 @@ button {
 }
 
 .post-card__lower {
-  margin: 1rem;
+  margin: 1rem 1rem 6rem;
+
   overflow: hidden;
   & a:last-child {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
+    position: absolute;
+    bottom: 0rem;
+    right: 50%;
+    left: 50%;
+    width: 12rem;
+    text-align: center;
+    padding: 0.75rem 1rem;
     border-radius: 5px;
-    border: none;
+    border: 1px solid v.$color-primary;
     color: v.$text-color-light;
     background-color: v.$color-primary;
+    transform: translate(-50%, -50%);
+    &:hover {
+      background-color: v.$grey-color-1;
+      color: v.$color-primary;
+    }
   }
 }
 
@@ -271,7 +285,7 @@ button {
   justify-content: flex-start;
   text-align: center;
   align-items: center;
-  height: 52vh;
+  height: 52rem;
   width: 100%;
   background-color: v.$transparent;
   @include m.mediaPhone {
@@ -325,11 +339,15 @@ button {
   & img {
     width: 100%;
   }
+
+  & h3 {
+    margin-top: 3.5rem;
+  }
 }
 
 .post__body-html p {
   // color: v.$text-color-dark;
-  margin: 3em 0 3em 0;
+  margin: 1.5rem 0 1.5rem 0;
   line-height: 1.5;
 }
 
@@ -382,7 +400,7 @@ button {
   padding: 2rem 0;
   @include m.flexCenter();
   @include m.mediaDesktop() {
-    height: 30vh;
+    height: 30%;
   }
 }
 

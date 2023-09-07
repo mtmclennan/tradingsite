@@ -15,13 +15,28 @@ export const getBySlug = async (slug: string) => {
 
   const post = await res.json();
 
-  console.log(post);
   if (!res.ok) {
     console.log("Not OK");
     throw new Error(`Failed to fetch post, received status ${res.status}`);
   }
 
   return post;
+};
+
+export const showLastFullWord = (text: string, maxLength: number): string => {
+  if (text.length <= maxLength) {
+    return text; // No need to truncate if text is shorter than or equal to maxLength
+  } else {
+    const truncatedText = text.slice(0, maxLength);
+    const lastSpaceIndex = truncatedText.lastIndexOf(" ");
+
+    if (lastSpaceIndex !== -1) {
+      return truncatedText.slice(0, lastSpaceIndex) + "...";
+    } else {
+      // If there are no spaces, just truncate at the maxLength
+      return truncatedText + "...";
+    }
+  }
 };
 
 export const formatDate = (date: string) => {

@@ -24,11 +24,11 @@ const Pagination = ({
   };
 
   return (
-    <nav>
+    <div>
       <ul className={classes.container}>
         {currentPage !== 1 && (
           <li className={classes.arrows}>
-            <a onClick={prevPageHandler}>Previous</a>
+            <span onClick={prevPageHandler}>Previous</span>
           </li>
         )}
 
@@ -39,17 +39,17 @@ const Pagination = ({
             }`}
             key={pgNumber}
           >
-            <a onClick={() => setCurrentPage(pgNumber)}>{pgNumber}</a>
+            <span onClick={() => setCurrentPage(pgNumber)}>{pgNumber}</span>
           </li>
         ))}
 
         {currentPage !== numberPages && (
           <li className={classes.arrows}>
-            <a onClick={nextPageHandler}>Next</a>
+            <span onClick={nextPageHandler}>Next</span>
           </li>
         )}
       </ul>
-    </nav>
+    </div>
   );
 };
 

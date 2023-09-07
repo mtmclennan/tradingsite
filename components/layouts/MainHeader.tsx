@@ -1,7 +1,7 @@
 import Link from "next/link";
 import classes from "./MainHeader.module.scss";
 import { useRouter } from "next/router";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Logo from "../../public/assets/Colorlogo-nobackground.svg";
 
 import { Fragment, useEffect, useState } from "react";
@@ -33,7 +33,8 @@ const MainHeader = ({ currentRoute }: { currentRoute: string }) => {
             <Image
               src={Logo}
               alt="EdgeInMind"
-              layout="fill"
+              fill
+              sizes="223px"
               onClick={() => router.push("/")}
             />
           </div>

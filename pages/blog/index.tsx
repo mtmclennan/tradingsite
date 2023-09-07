@@ -22,6 +22,7 @@ const Blog = ({ posts }: PostsData) => {
   const sortedBlogPosts = posts.data.sort((a, b) => {
     const dateA = new Date(a.dateModified);
     const dateB = new Date(b.dateModified);
+
     return +dateB - +dateA;
   });
 
@@ -36,7 +37,14 @@ const Blog = ({ posts }: PostsData) => {
 
   useEffect(() => {
     if (allPosts) {
-      setCurrentPosts(allPosts.slice(indexOfFirstRecord, indexOfLastRecord));
+      setCurrentPosts(
+        allPosts.slice(
+          indexOfFirstRecord,
+          indexOfLastRecord > allPosts.length
+            ? allPosts.length
+            : indexOfLastRecord
+        )
+      );
     }
   }, [allPosts, indexOfFirstRecord, indexOfLastRecord]);
 
@@ -60,10 +68,13 @@ const Blog = ({ posts }: PostsData) => {
         </div>
 
         <ul className="list">
-          {currentPosts &&
+          {currentPosts ? (
             currentPosts.map((post) => {
               return <PostCard post={post} key={post._id} />;
-            })}
+            })
+          ) : (
+            <p>Loading....</p>
+          )}
         </ul>
         <Pagination
           currentPage={currentPage}

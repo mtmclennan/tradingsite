@@ -4,9 +4,9 @@
 .card {
   list-style: none;
   width: 55rem;
-  height: 52rem;
+  height: 60rem;
   border-radius: 5px;
-
+  position: relative;
   background-color: v.$grey-color-0;
   @include m.mediaPhone {
     width: 100vw;

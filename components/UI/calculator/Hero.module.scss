@@ -6,7 +6,7 @@
   @include m.flexCenter(column);
   // padding: 0 3rem;
   @include m.mediaDesktop() {
-    height: 50vh;
+    height: 50%;
   }
   width: 100%;
 }

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { Fragment, useEffect } from "react";
 import useRemark from "../../hooks/use-remark";
-// import { DateOptions } from "../../types/index.types";
 import { Post } from "../../types/interfaces";
 import { formatDate } from "../../lib/post-utils";
 
@@ -12,18 +11,9 @@ type PostContentProps = {
 function PostContent({ post }: PostContentProps) {
   const { postHtml, convertMd } = useRemark();
 
-  // const formatDate = (date: string) => {
-  //   const options: DateOptions = {
-  //     year: "numeric",
-  //     month: "long",
-  //     day: "numeric",
-  //   };
-  //   return new Date(date).toLocaleDateString("en", options);
-  // };
-
   useEffect(() => {
     convertMd(post.postBody);
-  }, [post.postBody, convertMd]);
+  }, []);
 
   return (
     <Fragment>
@@ -39,18 +29,22 @@ function PostContent({ post }: PostContentProps) {
           {post.featuredImage && (
             <Image
               src={post.featuredImage}
+              priority={true}
               alt={post.photoCaption}
               style={{ width: "100%" }}
+              sizes="(min-width: 700px) 80vw, 100vw"
               fill
             />
           )}
         </div>
         <article className="post__body">
-          {postHtml && (
+          {postHtml ? (
             <div
               className="post__body-html"
               dangerouslySetInnerHTML={postHtml}
             />
+          ) : (
+            ""
           )}
         </article>
       </div>

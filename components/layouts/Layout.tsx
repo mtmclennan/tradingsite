@@ -10,34 +10,11 @@ type LayoutProps = {
 };
 
 const Layout = ({ children }: LayoutProps) => {
-  const [showBackground, setShowBackground] = useState(false);
   const router = useRouter();
   const currentRoute = router.pathname;
 
-  useEffect(() => {
-    if (
-      currentRoute === "/" ||
-      currentRoute === "/about" ||
-      currentRoute === "/contact" ||
-      currentRoute === "/tools"
-    ) {
-      setShowBackground(true);
-    } else setShowBackground(false);
-  }, [currentRoute]);
-
   return (
     <Fragment>
-      {/* <div className="background">
-        <Image
-          className="background-image"
-          layout="fill"
-          quality={80}
-          // placeholder="blur"
-          src="/assets/iStock-1322645661.jpg"
-          alt="background"
-        />
-      </div> */}
-
       <MainHeader currentRoute={currentRoute} />
       <main className={classes.container}>{children}</main>
       <Footer />

@@ -27,11 +27,9 @@ interface IParams extends ParsedUrlQuery {
 }
 export const getStaticProps: GetStaticProps = async (context) => {
   const { slug } = context.params as IParams;
-  console.log("slug");
-  console.log(slug);
+
   const postData = await getBySlug(slug);
-  console.log("postData");
-  console.log(postData);
+
   return {
     props: {
       post: postData.data,
@@ -45,12 +43,9 @@ export async function getStaticPaths() {
 
   const slugs = posts.data.map((post: Post) => post.slug);
 
-  console.log("StaticPaths");
-  console.log(slugs);
-
   return {
     paths: slugs.map((slug: string) => ({ params: { slug } })),
-    fallback: true,
+    fallback: false,
   };
 }
 

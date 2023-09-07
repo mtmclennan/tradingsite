@@ -29,7 +29,12 @@ const Footer = () => {
         />
       )}
       <div className={classes.logo}>
-        <Image src={logo} alt="EdgeInMind" height={150} width={259} />
+        <Image
+          src={logo}
+          alt="EdgeInMind"
+          fill
+          sizes="(min-width: 1280px) 320px, (min-width: 820px) calc(22.95vw + 31px), 199px"
+        />
       </div>
       <div className={classes.nav}>
         <ul>
