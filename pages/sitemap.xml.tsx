@@ -26,7 +26,6 @@ const generateSiteMap = async () => {
 <lastmod>2023-07-31</lastmod>
 </url>
 <url>
-<url>
 <loc>https://edgeinmind.com/tools</loc>
 <lastmod>2023-07-31</lastmod>
 </url>
@@ -46,6 +45,7 @@ const generateSiteMap = async () => {
 <loc>https://edgeinmind.com/tools/equity-curve-simulator</loc>
 <lastmod>2023-07-31</lastmod>
 </url>
+<url>
 <loc>https://edgeinmind.com/blog</loc>
 <lastmod>2023-07-31</lastmod>
 </url>
