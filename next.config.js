@@ -2,8 +2,15 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["localhost", "pluralpost.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "pluralpost.com",
+        port: "",
+      },
+    ],
   },
+  productionBrowserSourceMaps: true,
   compiler: {
     removeConsole: false,
   },

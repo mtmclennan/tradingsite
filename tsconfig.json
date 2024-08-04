@@ -13,16 +13,22 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "hooks/use-remark.ts",
-    "pages/blog/index.js",
-    "components/UI/calculator/OutputField.tsx",
-    "declaration.d.ts"
+    "src/hooks/use-remark.ts",
+    "src/pages/blowwg/index.js",
+    "src/components/UI/calculator/OutputField.tsx",
+    "declaration.d.ts",
+    ".next/types/**/*.ts"
   ],
   "exclude": ["node_modules"]
 }
