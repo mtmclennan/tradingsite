@@ -1,3 +1,7 @@
+⚠️ Archived Project  
+This repository represents an earlier Next.js project and is no longer actively maintained. It is preserved for historical and reference purposes.
+
+
 # EdgeInMind
 
 ## The Ultimate Resource for Traders Seeking an Edge in the Market
