@@ -1,36 +1,91 @@
-⚠️ Archived Project  
-This repository represents an earlier Next.js project and is no longer actively maintained. It is preserved for historical and reference purposes.
-
-
 # EdgeInMind
 
-## The Ultimate Resource for Traders Seeking an Edge in the Market
+> A trading education website built with Next.js, featuring a content-focused blog and practical risk/calculation tools for retail traders.
 
-This NextJS project is a basic blog website, that also has a tools section. The tools section includes calculators for traders to use for quickly figuring out order placement prices, number of share etc.
+## Why this project exists
 
-The site uses NextJS SSG (Static Site Generation), and On-Demand Revalidation ISR (Incremental Static Regeneration). This rebuilds the static site whenever a post is published or removed from the backend database. This project is using [PluralPost](https://github.com/mtmclennan/PluralPost) for a backend, to retrieve post data at build time.
+EdgeInMind was built to combine two things traders constantly need:
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+1. **Clear educational content** (blog posts)
+2. **Fast decision-support tools** (position size, risk, and simulation calculators)
 
-## Getting Started
+This repository is an archived snapshot of that product direction and implementation.
 
-First, run the development server:
+## Employer-focused project summary
+
+If you're reviewing this as a hiring manager or recruiter, here are the key engineering signals:
+
+- **Modern React/Next.js stack** (Next.js 14 App Router + TypeScript)
+- **Separation of concerns** between routing, API/data utilities, reusable hooks, and presentation components
+- **Domain-driven UI features** (trading calculators with isolated math utilities)
+- **Security-conscious markdown rendering** using `unified` + `DOMPurify`
+- **Production-oriented SEO support** including dynamic sitemap generation
+
+## Core features
+
+- Blog listing with a featured post + pagination
+- Dynamic blog post pages loaded by slug
+- Markdown-to-HTML rendering pipeline for post content
+- Trading tools section with calculators:
+  - Trade Order Calculator
+  - ATR-based Trade Order Calculator
+  - Risk on Trade Calculator
+  - Equity Curve Simulator
+- Contact form flow with reusable validation and HTTP hooks
+
+## Tech stack
+
+- **Framework:** Next.js 14 (App Router)
+- **Language:** TypeScript + React 18
+- **Styling:** Sass/SCSS modules + global base styles
+- **Content processing:** `unified`, `remark-*`, `rehype-stringify`, `dompurify`
+- **Charts/visualization:** Recharts
+- **Build/runtime:** Node.js, npm/yarn
+
+## Architecture at a glance
+
+- `src/app/*` — Route segments and page-level data loading
+- `src/components/*` — Reusable UI and feature components
+- `src/components/tools/*` — Calculator components and tool-specific UX
+- `src/hooks/*` — Shared client logic (`use-input`, `use-http`, `use-remark`)
+- `src/lib/*` — API/data helpers and utility functions
+- `src/types/*` — Shared TypeScript interfaces
+
+For a deeper walk-through, see **[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)**.
+
+## Local development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3010](http://localhost:3010) with your browser to see the result.
+Default dev URL from scripts:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction)
+- `http://localhost:3000`
 
-## Learn More
+## Environment variables
 
-To learn more about Next.js, take a look at the following resources:
+Create a `.env.local` file with values for the external backend used by this app:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+SERVER_URL=<posts collection endpoint>
+SERVER_URL_BY_SLUG=<single-post endpoint prefix>
+NEXT_PUBLIC_SERVER_CONTACT_URL=<contact form endpoint>
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Notes
+
+- This repository is currently treated as an **archived/reference project**, not an actively maintained production app.
+- The backend content source referenced historically is [PluralPost](https://github.com/mtmclennan/PluralPost).
+
+## Potential next improvements
+
+- Add tests for calculator utility functions
+- Tighten TypeScript types in blog/tool state (replace `any` usage)
+- Centralize and standardize metadata strategy across all routes
+- Improve accessibility and keyboard interactions in calculator/form components
+
+---
+
+If you want, I can also add a concise one-page **`docs/CASE_STUDY.md`** optimized for portfolio storytelling (problem → decisions → tradeoffs → outcomes).
